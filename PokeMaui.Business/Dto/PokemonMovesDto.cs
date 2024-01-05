@@ -3,7 +3,7 @@
 namespace PokeMaui.Business.Dto
 {
     [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
-    public class PokemonMoves
+    public class PokemonMovesDto
     {
         public int PokemonId { get; set; }
 

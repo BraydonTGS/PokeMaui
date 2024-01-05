@@ -25,7 +25,7 @@ namespace PokeMaui.Business.Dto
 
         public IEnumerable<FormDto> Forms { get; set; }
 
-        public IEnumerable<PokemonMoves> PokemonMoves { get; set; }
+        public IEnumerable<PokemonMovesDto> PokemonMoves { get; set; }
 
         public PokemonDto() { }
 
