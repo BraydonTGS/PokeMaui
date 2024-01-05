@@ -72,7 +72,7 @@ namespace PokeMaui.Business.Api
     public class Ability
     {
         [JsonProperty("ability")]
-        public Ability ability { get; set; }
+        public Ability2 ability { get; set; }
 
         [JsonProperty("is_hidden")]
         public bool? is_hidden { get; set; }
@@ -639,7 +639,7 @@ namespace PokeMaui.Business.Api
         public int? effort { get; set; }
 
         [JsonProperty("stat")]
-        public Stat stat { get; set; }
+        public Stat2 stat { get; set; }
     }
 
     public class Stat2
@@ -657,7 +657,7 @@ namespace PokeMaui.Business.Api
         public int? slot { get; set; }
 
         [JsonProperty("type")]
-        public Type type { get; set; }
+        public Type2 type { get; set; }
     }
 
     public class Type2
