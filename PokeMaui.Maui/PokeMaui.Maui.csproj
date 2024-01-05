@@ -1,10 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net7.0-android;net7.0-ios;</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
-		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>PokeMaui.Maui</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -16,7 +14,7 @@
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.pokemaui.maui</ApplicationId>
-		<ApplicationIdGuid>9a14d859-988f-4809-a631-8b2c9e3f35bc</ApplicationIdGuid>
+		<ApplicationIdGuid>14aa6beb-f932-4418-9ef7-d8f5e9ec013a</ApplicationIdGuid>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
