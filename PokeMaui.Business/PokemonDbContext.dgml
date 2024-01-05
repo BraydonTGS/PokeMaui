@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Ability" Category="EntityType" Annotations="Relational:TableName: Ability RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="162.847897743613,-520.593556706951,216.87,141.920344042969" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Ability" Name="Ability" UseManualLocation="True" />
+    <Node Id="Ability.Id" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="182.847978210449,-480.593400558404,54.55,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Id (int)" MaxLength="None" Name="Id" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Ability.Name" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100 Relational:ColumnName: AbilityName" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="267.397952880859,-480.59330900567,92.32,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Name (string)" MaxLength="(100)" Name="Name" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Ability.PokemonAbility" Category="Navigation Collection" Bounds="182.848012390137,-424.633225997858,118.62,25.96" Dependent="PokemonAbility" Field="" Inverse="Ability" Label="PokemonAbility (*)" Name="PokemonAbility" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="IEnumerable&lt;PokemonAbility&gt;" />
+    <Node Id="Form" Category="EntityType" Annotations="Relational:TableName: Form RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="963.34988077399,40.2752347495224,211.250000000001,197.880444042969" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Form" Name="Form" UseManualLocation="True" />
+    <Node Id="Form.Id" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="983.349633789063,80.2753852997498,54.5500000000001,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Id (int)" MaxLength="None" Name="Id" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Form.Name" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100 Relational:ColumnName: FormName" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="983.349582519531,136.235273758002,92.3200000000001,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Name (string)" MaxLength="(100)" Name="Name" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Form.Pokemon" Category="Navigation Property" Bounds="1067.89938964844,80.2753852997498,86.7,25.96" Dependent="" Field="" Inverse="Forms" Label="Pokemon (1)" Name="Pokemon" Principal="Pokemon" PropertyAccessMode="PropertyAccessMode.Default" Type="Pokemon" />
+    <Node Id="Form.PokemonId" Category="Property Foreign" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: PokemonId" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="983.350536702474,192.195387283392,104.253333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PokemonId (int)" MaxLength="None" Name="PokemonId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="IModel" Category="Model" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]] Relational:MaxIdentifierLength: 128 RelationshipDiscoveryConvention:InverseNavigationCandidates: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]] SqlServer:ValueGenerationStrategy: IdentityColumn" Bounds="134.270319415162,-560.593703551414,1113.49215204875,1036.29154363709" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" Label="PokemonDbContext" LayoutSettings="ForceDirected" ProductVersion="7.0.14" PropertyAccessMode="PropertyAccessMode.Default" UseManualLocation="True" />
+    <Node Id="Move" Category="EntityType" Annotations="Relational:TableName: Move RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="1005.01192343758,-513.071472074208,216.87016976095,141.920339013672" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Move" Name="Move" UseManualLocation="True" />
+    <Node Id="Move.Id" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="1025.012109375,-473.071427902154,54.55,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Id (int)" MaxLength="None" Name="Id" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Move.Name" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100 Relational:ColumnName: MoveName" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="1109.56161865234,-473.071427902154,92.3199999999999,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Name (string)" MaxLength="(100)" Name="Name" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Move.PokemonMoves" Category="Navigation Collection" Bounds="1025.01181559245,-417.11137541192,120.156666666667,25.96" Dependent="PokemonMoves" Field="" Inverse="Move" Label="PokemonMoves (*)" Name="PokemonMoves" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="IEnumerable&lt;PokemonMoves&gt;" />
+    <Node Id="Pokemon" Category="EntityType" Annotations="Relational:TableName: Pokemon RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="508.940360817343,-506.187906856467,395.447225868933,253.840593156681" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Pokemon" Name="Pokemon" UseManualLocation="True" />
+    <Node Id="Pokemon.BaseExperience" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: BaseExperience" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="679.09791015625,-298.307633956842,125.52,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="BaseExperience (int)" MaxLength="None" Name="BaseExperience" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Pokemon.Forms" Category="Navigation Collection" Bounds="711.337332356771,-466.187669357233,68.0233333333333,25.96" Dependent="Form" Field="" Inverse="Pokemon" Label="Forms (*)" Name="Forms" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="IEnumerable&lt;Form&gt;" />
+    <Node Id="Pokemon.Height" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: Height" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="528.941050211589,-410.227708419733,79.9166666666666,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Height (int)" MaxLength="None" Name="Height" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Pokemon.Id" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="528.940362548828,-466.187669357233,54.55,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Id (int)" MaxLength="None" Name="Id" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Pokemon.Name" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100 Relational:ColumnName: PokemonName" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="750.994388427734,-410.227708419733,92.3200000000001,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Name (string)" MaxLength="(100)" Name="Name" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Pokemon.Order" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: Order" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="809.361086832682,-466.187669357233,75.0266666666666,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Order (int)" MaxLength="None" Name="Order" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Pokemon.PokemonAbility" Category="Navigation Collection" Bounds="674.030881347656,-354.26762541192,118.62,25.96" Dependent="PokemonAbility" Field="" Inverse="Pokemon" Label="PokemonAbility (*)" Name="PokemonAbility" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="IEnumerable&lt;PokemonAbility&gt;" />
+    <Node Id="Pokemon.PokemonMoves" Category="Navigation Collection" Bounds="528.94098429362,-298.307633956842,120.156666666667,25.96" Dependent="PokemonMoves" Field="" Inverse="Pokemon" Label="PokemonMoves (*)" Name="PokemonMoves" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="IEnumerable&lt;PokemonMoves&gt;" />
+    <Node Id="Pokemon.PokemonTypes" Category="Navigation Collection" Bounds="528.940870361328,-354.26762541192,115.09,25.96" Dependent="PokemonTypes" Field="" Inverse="Pokemon" Label="PokemonTypes (*)" Name="PokemonTypes" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="IEnumerable&lt;PokemonTypes&gt;" />
+    <Node Id="Pokemon.Sprite" Category="Navigation Property" Bounds="613.491034342448,-466.187669357233,67.8466666666667,25.96" Dependent="Sprite" Field="" Inverse="Pokemon" Label="Sprite (1)" Name="Sprite" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="Sprite" />
+    <Node Id="Pokemon.Weight" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: Weight" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="638.85772257487,-410.227708419733,82.1366666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Weight (int)" MaxLength="None" Name="Weight" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PokemonAbility" Category="EntityType" Annotations="Relational:TableName: PokemonAbility RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="154.270319415162,-332.802663152264,227.083333333333,197.88034486084" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="PokemonAbility" Name="PokemonAbility" UseManualLocation="True" />
+    <Node Id="PokemonAbility.Ability" Category="Navigation Property" Bounds="174.270399983724,-292.802384933404,70.3833333333333,25.96" Dependent="" Field="" Inverse="PokemonAbility" Label="Ability (1)" Name="Ability" Principal="Ability" PropertyAccessMode="PropertyAccessMode.Default" Type="Ability" />
+    <Node Id="PokemonAbility.AbilityId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: AbilityId" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="174.270451456706,-236.842393478326,87.9366666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="AbilityId (int)" MaxLength="None" Name="AbilityId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PokemonAbility.Pokemon" Category="Navigation Property" Bounds="274.653692626953,-292.802384933404,86.7,25.96" Dependent="" Field="" Inverse="PokemonAbility" Label="Pokemon (1)" Name="Pokemon" Principal="Pokemon" PropertyAccessMode="PropertyAccessMode.Default" Type="Pokemon" />
+    <Node Id="PokemonAbility.PokemonId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: PokemonId" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="174.27043568929,-180.882337173395,104.253333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PokemonId (int)" MaxLength="None" Name="PokemonId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PokemonMoves" Category="EntityType" Annotations="Relational:TableName: PokemonMoves RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="1006.55580852872,-322.570681131825,221.206763712566,197.880234408569" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="PokemonMoves" Name="PokemonMoves" UseManualLocation="True" />
+    <Node Id="PokemonMoves.Move" Category="Navigation Property" Bounds="1026.55602701823,-282.570573409967,66.8266666666666,25.96" Dependent="" Field="" Inverse="PokemonMoves" Label="Move (1)" Name="Move" Principal="Move" PropertyAccessMode="PropertyAccessMode.Default" Type="Move" />
+    <Node Id="PokemonMoves.MoveId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: MoveId" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="1123.38232666016,-282.570573409967,84.3800000000001,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="MoveId (int)" MaxLength="None" Name="MoveId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PokemonMoves.Pokemon" Category="Navigation Property" Bounds="1026.55563964844,-226.610581954889,86.7,25.96" Dependent="" Field="" Inverse="PokemonMoves" Label="Pokemon (1)" Name="Pokemon" Principal="Pokemon" PropertyAccessMode="PropertyAccessMode.Default" Type="Pokemon" />
+    <Node Id="PokemonMoves.PokemonId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: PokemonId" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="1026.55588948568,-170.650556167535,104.253333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PokemonId (int)" MaxLength="None" Name="PokemonId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PokemonTypes" Category="EntityType" Annotations="Relational:TableName: PokemonTypes RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="200.436983943749,32.8467812538639,211.073333333333,197.8804" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="PokemonTypes" Name="PokemonTypes" UseManualLocation="True" />
+    <Node Id="PokemonTypes.Pokemon" Category="Navigation Property" Bounds="220.437200927734,128.806929031439,86.7,25.96" Dependent="" Field="" Inverse="PokemonTypes" Label="Pokemon (1)" Name="Pokemon" Principal="Pokemon" PropertyAccessMode="PropertyAccessMode.Default" Type="Pokemon" />
+    <Node Id="PokemonTypes.PokemonId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: PokemonId" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="220.4372752889,184.766859451361,104.253333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PokemonId (int)" MaxLength="None" Name="PokemonId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PokemonTypes.Type" Category="Navigation Property" Bounds="220.437230224609,72.8469337616639,61.76,25.96" Dependent="" Field="" Inverse="PokemonTypes" Label="Type (1)" Name="Type" Principal="Type" PropertyAccessMode="PropertyAccessMode.Default" Type="Type" />
+    <Node Id="PokemonTypes.TypeId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: TypeId" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="312.197169392904,72.8469337616639,79.3133333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="TypeId (int)" MaxLength="None" Name="TypeId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Sprite" Category="EntityType" Annotations="Relational:TableName: Sprite RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="541.967356380287,35.6691891420393,295.13046466063,197.880657666016" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Sprite" Name="Sprite" UseManualLocation="True" />
+    <Node Id="Sprite.Description" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: Description" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="696.220876871745,187.589399734564,120.876666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Description (string)" MaxLength="None" Name="Description" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Sprite.Id" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="561.967279052734,75.6690773163514,54.55,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Id (int)" MaxLength="None" Name="Id" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Sprite.Image" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: Image" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="684.287780354818,131.629072586127,93.6033333333334,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Image (string)" MaxLength="None" Name="Image" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Sprite.Name" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100 Relational:ColumnName: Name" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="561.967471923828,131.629072586127,92.3200000000001,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Name (string)" MaxLength="(100)" Name="Name" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Sprite.Pokemon" Category="Navigation Property" Bounds="646.517828369141,75.6690773163514,86.7,25.96" Dependent="" Field="" Inverse="Sprite" Label="Pokemon (1)" Name="Pokemon" Principal="Pokemon" PropertyAccessMode="PropertyAccessMode.Default" Type="Pokemon" />
+    <Node Id="Sprite.PokemonId" Category="Property Foreign" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: PokemonId" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="561.968212483724,187.589399734564,104.253333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PokemonId (int)" MaxLength="None" Name="PokemonId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="Type" Category="EntityType" Annotations="" BaseClass="" Bounds="195.228957332436,313.777364217295,216.870115356445,141.920399824654" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="Type" Name="Type" UseManualLocation="True" />
+    <Node Id="Type.Id" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="215.229020690918,353.777449050971,54.55,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Id (int)" MaxLength="None" Name="Id" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="Type.Name" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100 Relational:ColumnName: TypeName" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="299.779147949219,353.777449050971,92.32,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Name (string)" MaxLength="(100)" Name="Name" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="Type.PokemonTypes" Category="Navigation Collection" Bounds="215.228963928223,409.737501541205,115.09,25.96" Dependent="PokemonTypes" Field="" Inverse="Type" Label="PokemonTypes (*)" Name="PokemonTypes" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="IEnumerable&lt;PokemonTypes&gt;" />
+  </Nodes>
+  <Links>
+    <Link Source="Ability" Target="Ability.Id" Category="Contains" />
+    <Link Source="Ability" Target="Ability.Name" Category="Contains" />
+    <Link Source="Ability" Target="Ability.PokemonAbility" Category="Contains" />
+    <Link Source="Form" Target="Form.Id" Category="Contains" />
+    <Link Source="Form" Target="Form.Name" Category="Contains" />
+    <Link Source="Form" Target="Form.Pokemon" Category="Contains" />
+    <Link Source="Form" Target="Form.PokemonId" Category="Contains" />
+    <Link Source="Form" Target="Pokemon" Category="Foreign Key" Annotations="" Bounds="800.509807940963,-244.970036020452,199.326611309879,285.245270769975" From="Form.PokemonId" IsUnique="False" Label="1:*" LabelBounds="932.734798899329,-32.1189683669933,14.0733333333336,15.9600000000002" Name="Form -&gt; Pokemon" To="Pokemon.Id" />
+    <Link Source="IModel" Target="Ability" Category="Contains" />
+    <Link Source="IModel" Target="Form" Category="Contains" />
+    <Link Source="IModel" Target="Move" Category="Contains" />
+    <Link Source="IModel" Target="Pokemon" Category="Contains" />
+    <Link Source="IModel" Target="PokemonAbility" Category="Contains" />
+    <Link Source="IModel" Target="PokemonMoves" Category="Contains" />
+    <Link Source="IModel" Target="PokemonTypes" Category="Contains" />
+    <Link Source="IModel" Target="Sprite" Category="Contains" />
+    <Link Source="IModel" Target="Type" Category="Contains" />
+    <Link Source="Move" Target="Move.Id" Category="Contains" />
+    <Link Source="Move" Target="Move.Name" Category="Contains" />
+    <Link Source="Move" Target="Move.PokemonMoves" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.BaseExperience" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.Forms" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.Height" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.Id" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.Name" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.Order" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.PokemonAbility" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.PokemonMoves" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.PokemonTypes" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.Sprite" Category="Contains" />
+    <Link Source="Pokemon" Target="Pokemon.Weight" Category="Contains" />
+    <Link Source="PokemonAbility" Target="Ability" Category="Foreign Key" Annotations="" Bounds="269.403547353135,-369.674376869461,0.59312198591789,36.8717137171975" From="PokemonAbility.AbilityId" IsUnique="False" Label="1:*" LabelBounds="251.62677497929,-359.250688044412,14.0733333333333,15.96" Name="PokemonAbility -&gt; Ability" To="Ability.Id" />
+    <Link Source="PokemonAbility" Target="Pokemon" Category="Foreign Key" Annotations="" Bounds="381.353652748495,-310.925067887043,119.043439463854,39.4427415938916" From="PokemonAbility.PokemonId" IsUnique="False" Label="1:*" LabelBounds="432.53197709936,-311.169123157146,14.0733333333333,15.96" Name="PokemonAbility -&gt; Pokemon" To="Pokemon.Id" />
+    <Link Source="PokemonAbility" Target="PokemonAbility.Ability" Category="Contains" />
+    <Link Source="PokemonAbility" Target="PokemonAbility.AbilityId" Category="Contains" />
+    <Link Source="PokemonAbility" Target="PokemonAbility.Pokemon" Category="Contains" />
+    <Link Source="PokemonAbility" Target="PokemonAbility.PokemonId" Category="Contains" />
+    <Link Source="PokemonMoves" Target="Move" Category="Foreign Key" Annotations="" Bounds="1114.80558064661,-362.152431885776,0.672529149444472,39.5817507539511" From="PokemonMoves.MoveId" IsUnique="False" Label="1:*" LabelBounds="1097.06851184634,-350.307579634038,14.0733333333335,15.96" Name="PokemonMoves -&gt; Move" To="Move.Id" />
+    <Link Source="PokemonMoves" Target="Pokemon" Category="Foreign Key" Annotations="" Bounds="912.803026845696,-301.111100625769,93.7527816830293,35.5458612842651" From="PokemonMoves.PokemonId" IsUnique="False" Label="1:*" LabelBounds="950.538497458321,-279.329146617043,14.0733333333333,15.96" Name="PokemonMoves -&gt; Pokemon" To="Pokemon.Id" />
+    <Link Source="PokemonMoves" Target="PokemonMoves.Move" Category="Contains" />
+    <Link Source="PokemonMoves" Target="PokemonMoves.MoveId" Category="Contains" />
+    <Link Source="PokemonMoves" Target="PokemonMoves.Pokemon" Category="Contains" />
+    <Link Source="PokemonMoves" Target="PokemonMoves.PokemonId" Category="Contains" />
+    <Link Source="PokemonTypes" Target="Pokemon" Category="Foreign Key" Annotations="" Bounds="383.547321538275,-245.264712352189,218.052212207489,278.111493606053" From="PokemonTypes.PokemonId" IsUnique="False" Label="1:*" LabelBounds="424.116662754108,-56.0478571830569,14.0733333333333,15.96" Name="PokemonTypes -&gt; Pokemon" To="Pokemon.Id" />
+    <Link Source="PokemonTypes" Target="PokemonTypes.Pokemon" Category="Contains" />
+    <Link Source="PokemonTypes" Target="PokemonTypes.PokemonId" Category="Contains" />
+    <Link Source="PokemonTypes" Target="PokemonTypes.Type" Category="Contains" />
+    <Link Source="PokemonTypes" Target="PokemonTypes.TypeId" Category="Contains" />
+    <Link Source="PokemonTypes" Target="Type" Category="Foreign Key" Annotations="" Bounds="304.394110413997,230.727181253864,0.676139201769047,74.0505581099498" From="PokemonTypes.TypeId" IsUnique="False" Label="1:*" LabelBounds="308.732180018357,259.790721103505,14.0733333333336,15.96" Name="PokemonTypes -&gt; Type" To="Type.Id" />
+    <Link Source="Sprite" Target="Pokemon" Category="Foreign Key" Annotations="" Bounds="692.831013131833,-243.352310788631,9.30188266276093,279.02149993067" From="Sprite.PokemonId" IsUnique="True" Label="1:1" LabelBounds="677.941953846305,-111.888198827616,15.54,15.9600000000001" Name="Sprite -&gt; Pokemon" To="Pokemon.Id" />
+    <Link Source="Sprite" Target="Sprite.Description" Category="Contains" />
+    <Link Source="Sprite" Target="Sprite.Id" Category="Contains" />
+    <Link Source="Sprite" Target="Sprite.Image" Category="Contains" />
+    <Link Source="Sprite" Target="Sprite.Name" Category="Contains" />
+    <Link Source="Sprite" Target="Sprite.Pokemon" Category="Contains" />
+    <Link Source="Sprite" Target="Sprite.PokemonId" Category="Contains" />
+    <Link Source="Type" Target="Type.Id" Category="Contains" />
+    <Link Source="Type" Target="Type.Name" Category="Contains" />
+    <Link Source="Type" Target="Type.PokemonTypes" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+    <Category Id="EntityType" />
+    <Category Id="Foreign Key" />
+    <Category Id="Model" />
+    <Category Id="Navigation Collection" />
+    <Category Id="Navigation Property" />
+    <Category Id="Property Foreign" />
+    <Category Id="Property Primary" />
+    <Category Id="Property Required" />
+  </Categories>
+  <Properties>
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass" Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Field" Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsAbstract" Label="IsAbstract" Description="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="LabelBounds" DataType="System.Windows.Rect" />
+    <Property Id="LayoutSettings" DataType="Microsoft.VisualStudio.Diagrams.View.GroupLayoutStyle" />
+    <Property Id="MaxLength" DataType="System.String" />
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type" Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
+      <Condition Expression="HasCategory('EntityType')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Required" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Required')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Property" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Property')" />
+      <Setter Property="Background" Value="#FF990000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Collection" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Collection')" />
+      <Setter Property="Background" Value="#FFFF3232" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Model" ValueLabel="True">
+      <Condition Expression="HasCategory('Model')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+</DirectedGraph>

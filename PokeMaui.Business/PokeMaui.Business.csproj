@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Context\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PokeMaui.Entity\PokeMaui.Entity.csproj" />
   </ItemGroup>
 
