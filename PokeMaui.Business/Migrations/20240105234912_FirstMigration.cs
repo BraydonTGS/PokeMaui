@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -14,8 +15,7 @@ namespace PokeMaui.Business.Migrations
                 name: "Ability",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AbilityName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
@@ -27,8 +27,7 @@ namespace PokeMaui.Business.Migrations
                 name: "Move",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     MoveName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
@@ -40,8 +39,7 @@ namespace PokeMaui.Business.Migrations
                 name: "Pokemon",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PokemonName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Order = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<int>(type: "int", nullable: false),
@@ -57,8 +55,7 @@ namespace PokeMaui.Business.Migrations
                 name: "Type",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TypeName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
@@ -70,10 +67,9 @@ namespace PokeMaui.Business.Migrations
                 name: "Form",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FormName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    PokemonId = table.Column<int>(type: "int", nullable: false)
+                    PokemonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -90,8 +86,8 @@ namespace PokeMaui.Business.Migrations
                 name: "PokemonAbility",
                 columns: table => new
                 {
-                    PokemonId = table.Column<int>(type: "int", nullable: false),
-                    AbilityId = table.Column<int>(type: "int", nullable: false)
+                    PokemonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AbilityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -114,8 +110,8 @@ namespace PokeMaui.Business.Migrations
                 name: "PokemonMoves",
                 columns: table => new
                 {
-                    PokemonId = table.Column<int>(type: "int", nullable: false),
-                    MoveId = table.Column<int>(type: "int", nullable: false)
+                    PokemonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MoveId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -138,12 +134,11 @@ namespace PokeMaui.Business.Migrations
                 name: "Sprite",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PokemonId = table.Column<int>(type: "int", nullable: false)
+                    PokemonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -160,8 +155,8 @@ namespace PokeMaui.Business.Migrations
                 name: "PokemonTypes",
                 columns: table => new
                 {
-                    PokemonId = table.Column<int>(type: "int", nullable: false),
-                    TypeId = table.Column<int>(type: "int", nullable: false)
+                    PokemonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TypeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {

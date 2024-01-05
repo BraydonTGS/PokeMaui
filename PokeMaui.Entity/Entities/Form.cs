@@ -11,7 +11,7 @@ namespace PokeMaui.Entity.Entities
         [NotNull]
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Column("FormName")]
         [MaxLength(100)]
@@ -19,7 +19,7 @@ namespace PokeMaui.Entity.Entities
 
         [Column("PokemonId")]
         [ForeignKey(nameof(Pokemon))]
-        public int PokemonId { get; set; }
+        public Guid PokemonId { get; set; }
 
         public Pokemon? Pokemon { get; set; }
     }

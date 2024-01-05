@@ -11,12 +11,12 @@ namespace PokeMaui.Entity.Entities
         [Key]
         [Column("PokemonId")]
         [ForeignKey(nameof(Pokemon))]
-        public int PokemonId { get; set; }
+        public Guid PokemonId { get; set; }
 
         [Key]
         [Column("TypeId")]
         [ForeignKey(nameof(Type))]
-        public int TypeId { get; set; }
+        public Guid TypeId { get; set; }
 
         public Pokemon? Pokemon { get; set; }
 

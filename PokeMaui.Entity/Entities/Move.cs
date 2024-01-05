@@ -11,7 +11,7 @@ namespace PokeMaui.Entity.Entities
         [NotNull]
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Column("MoveName")]
         [MaxLength(100)]
