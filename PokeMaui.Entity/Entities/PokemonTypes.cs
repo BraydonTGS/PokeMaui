@@ -1,13 +1,13 @@
 ﻿namespace PokeMaui.Entity.Entities
 {
-    public class Form
+    public class PokemonTypes
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; } = string.Empty;
-
         public int PokemonId { get; set; }
 
+        public int TypeId { get; set; }
+
         public Pokemon? Pokemon { get; set; }
+
+        public Type? Type { get; set; }
     }
 }

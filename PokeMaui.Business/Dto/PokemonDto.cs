@@ -17,7 +17,7 @@ namespace PokeMaui.Business.Dto
 
         public int Height { get; set; }
 
-        public SpriteDto Sprites { get; set; }
+        public SpriteDto Sprite { get; set; }
 
         public IEnumerable<PokemonTypesDto> PokemonTypes { get; set; }
 
