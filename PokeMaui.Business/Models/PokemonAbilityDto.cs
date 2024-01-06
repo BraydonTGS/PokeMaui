@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace PokeMaui.Business.Dto
+namespace PokeMaui.Business.Models
 {
     [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     public class PokemonAbilityDto
