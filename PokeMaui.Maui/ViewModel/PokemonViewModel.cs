@@ -1,10 +1,15 @@
-﻿namespace PokeMaui.Maui.ViewModel
+﻿using PokeMaui.Business.Api;
+using PokeMaui.Business.Models;
+
+namespace PokeMaui.Maui.ViewModel
 {
     public partial class PokemonViewModel : BaseViewModel
     {
-        public PokemonViewModel()
+        private readonly PokemonApiService _apiService;
+
+        public PokemonViewModel(PokemonApiService apiService)
         {
-                
+            _apiService = apiService;
         }
     }
 }
