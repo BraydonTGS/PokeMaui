@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PokeMaui.Entity\PokeMaui.Entity.csproj" />
+    <ProjectReference Include="..\PokeMaui.Global\PokeMaui.Global.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,9 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E2BF7F91-793
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeMaui.Maui", "PokeMaui.Maui\PokeMaui.Maui.csproj", "{3438ED59-F956-4009-A708-1F3F91B24FFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeMaui.Business", "PokeMaui.Business\PokeMaui.Business.csproj", "{F512A615-2B04-4A57-AE22-AFF06617CF93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeMaui.Business", "PokeMaui.Business\PokeMaui.Business.csproj", "{F512A615-2B04-4A57-AE22-AFF06617CF93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeMaui.Entity", "PokeMaui.Entity\PokeMaui.Entity.csproj", "{C19C0974-1505-4662-8CDB-33938451D31A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeMaui.Entity", "PokeMaui.Entity\PokeMaui.Entity.csproj", "{C19C0974-1505-4662-8CDB-33938451D31A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeMaui.Global", "PokeMaui.Global\PokeMaui.Global.csproj", "{B23ED0B8-6C68-48D3-81F2-E6BE3E0DEF21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{C19C0974-1505-4662-8CDB-33938451D31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C19C0974-1505-4662-8CDB-33938451D31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C19C0974-1505-4662-8CDB-33938451D31A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23ED0B8-6C68-48D3-81F2-E6BE3E0DEF21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23ED0B8-6C68-48D3-81F2-E6BE3E0DEF21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23ED0B8-6C68-48D3-81F2-E6BE3E0DEF21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23ED0B8-6C68-48D3-81F2-E6BE3E0DEF21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{3438ED59-F956-4009-A708-1F3F91B24FFD} = {E2BF7F91-793A-45C8-B593-5D74F777E409}
 		{F512A615-2B04-4A57-AE22-AFF06617CF93} = {E2BF7F91-793A-45C8-B593-5D74F777E409}
 		{C19C0974-1505-4662-8CDB-33938451D31A} = {E2BF7F91-793A-45C8-B593-5D74F777E409}
+		{B23ED0B8-6C68-48D3-81F2-E6BE3E0DEF21} = {E2BF7F91-793A-45C8-B593-5D74F777E409}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BE3465D-1AD7-4ABF-8871-8BC5415A5C82}

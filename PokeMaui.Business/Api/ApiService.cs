@@ -2,6 +2,10 @@
 
 namespace PokeMaui.Business.Api
 {
+    /// <summary>
+    /// Generic ApiService
+    /// </summary>
+    /// <typeparam name="TResponse"></typeparam>
     public class ApiService<TResponse> : IApiService<TResponse>
     {
         private string _apiUrl;
@@ -9,7 +13,9 @@ namespace PokeMaui.Business.Api
 
         public ApiService(HttpClient client) => _client = client;
 
-        public void SetApiUrl(string apiUrl) => _apiUrl = apiUrl;
+        public void SetApiUrl(string apiUrl, string parameters = "") => _apiUrl = apiUrl + parameters;
+
+        public void ResetApiUrl() => _apiUrl = string.Empty;
 
         public async Task<TResponse> GetApiResponseAsync()
         {
