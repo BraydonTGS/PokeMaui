@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using PokeMaui.Business.Api;
+using PokeMaui.Business.Mappers;
 using PokeMaui.Business.MappingProfile;
+using PokeMaui.Business.Models;
 
 namespace PokeMaui.Business.Tests.Base
 {
@@ -25,6 +27,7 @@ namespace PokeMaui.Business.Tests.Base
             services.AddScoped<HttpClient>();
             services.AddScoped<PokemonApiService>();
             services.AddScoped<IApiService, ApiService>();
+            services.AddScoped<IApiResponseMapper<PokemonDto, PokemonApiResponse>, PokemonApiResponseMapper>();
 
             return services;
         }

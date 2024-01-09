@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using PokeMaui.Business.Api;
 using PokeMaui.Business.Models;
+using PokeMaui.Entity.Entities;
 
 namespace PokeMaui.Business.MappingProfile
 {
@@ -11,20 +11,17 @@ namespace PokeMaui.Business.MappingProfile
     {
         public MappingProfiles()
         {
-            // PokemonApiResponse => PokemonDto
-            CreateMap<PokemonApiResponse, PokemonDto>(MemberList.Destination)
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.id))
-            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name))
-            .ForMember(dest => dest.Order, opt => opt.MapFrom(src => src.order))
-            .ForMember(dest => dest.Weight, opt => opt.MapFrom(src => src.weight))
-            .ForMember(dest => dest.BaseExperience, opt => opt.MapFrom(src => src.base_experience))
-            .ForMember(dest => dest.Height, opt => opt.MapFrom(src => src.height))
-            .ForMember(dest => dest.Sprite, opt => opt.Ignore())
-            .ForMember(dest => dest.PokemonTypes, opt => opt.Ignore())
-            .ForMember(dest => dest.Forms, opt => opt.Ignore())
-            .ForMember(dest => dest.PokemonMoves, opt => opt.Ignore())
-            .ForMember(dest => dest.Sprite, opt => opt.Ignore())
-            .ReverseMap();
+            // PokemonDto => Pokemon //
+            CreateMap<PokemonDto, Pokemon>().ReverseMap();
+            CreateMap<AbilityDto, Entity.Entities.Ability>().ReverseMap();
+            CreateMap<FormDto, Entity.Entities.Form>().ReverseMap();
+            CreateMap<MoveDto, Entity.Entities.Move>().ReverseMap();
+            CreateMap<SpriteDto, Sprite>().ReverseMap();
+            CreateMap<TypeDto, Entity.Entities.Type>().ReverseMap();
+            CreateMap<PokemonAbilityDto, PokemonAbility>().ReverseMap();
+            CreateMap<PokemonMovesDto, PokemonMoves>().ReverseMap();
+            CreateMap<PokemonTypesDto, PokemonTypes>().ReverseMap();
+
         }
     }
 }

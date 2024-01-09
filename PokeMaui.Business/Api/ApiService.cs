@@ -4,7 +4,7 @@ using PokeMaui.Global.Exceptions;
 namespace PokeMaui.Business.Api
 {
     /// <summary>
-    /// Generic ApiService
+    /// ApiService - Implements IApiService
     /// </summary>
     /// <typeparam name="TResponse"></typeparam>
     public class ApiService : IApiService

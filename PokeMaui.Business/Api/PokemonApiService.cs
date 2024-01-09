@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using PokeMaui.Business.Mappers;
 using PokeMaui.Business.MappingProfile;
 using PokeMaui.Business.Models;
 using PokeMaui.Global.Constants;
@@ -12,9 +13,10 @@ namespace PokeMaui.Business.Api
     public class PokemonApiService
     {
         private readonly IApiService _apiService;
-        private readonly IMapper _mapper;
+        private readonly IApiResponseMapper<PokemonDto, PokemonApiResponse> _mapper;
 
-        public PokemonApiService(IApiService apiService, IMapper mapper)
+        public PokemonApiService(IApiService apiService, 
+            IApiResponseMapper<PokemonDto, PokemonApiResponse> mapper)
         {
             _apiService = apiService;
             _mapper = mapper;
@@ -22,7 +24,9 @@ namespace PokeMaui.Business.Api
         }
 
         /// <summary>
+        /// Get by the Pokemon Name
         /// 
+        /// Uses the PokemonApiServiceMapper to Map the Response to the PokemonDto
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -34,7 +38,7 @@ namespace PokeMaui.Business.Api
 
                 var parameter = name.ToLower();
                 var response = await _apiService.GetApiResponseAsync<PokemonApiResponse>(parameter);
-                var result = _mapper.Map<PokemonDto>(response);
+                var result = _mapper.MapFromApiResponseObject(response);
 
                 return result;
             }
