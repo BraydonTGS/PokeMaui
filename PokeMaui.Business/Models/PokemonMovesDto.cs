@@ -5,9 +5,9 @@ namespace PokeMaui.Business.Models
     [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     public class PokemonMovesDto
     {
-        public int PokemonId { get; set; }
+        public Guid PokemonId { get; set; }
 
-        public int MoveId { get; set; }
+        public Guid MoveId { get; set; }
 
         public PokemonDto? Pokemon { get; set; }
 
