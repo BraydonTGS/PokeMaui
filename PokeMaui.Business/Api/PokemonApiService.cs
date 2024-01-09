@@ -36,7 +36,31 @@ namespace PokeMaui.Business.Api
             {
                 if (string.IsNullOrEmpty(name)) return null;
 
-                var parameter = name.ToLower();
+                var parameter = name.ToLower().Trim();
+                var response = await _apiService.GetApiResponseAsync<PokemonApiResponse>(parameter);
+                var result = _mapper.MapFromApiResponseObject(response);
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+        /// <summary>
+        /// Get by the Pokemon Id
+        /// 
+        /// Uses the PokemonApiServiceMapper to Map the Response to the PokemonDto
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public async Task<PokemonDto> GetByIdAsync(int id)
+        {
+            try
+            {
+                var parameter = id.ToString().Trim();
                 var response = await _apiService.GetApiResponseAsync<PokemonApiResponse>(parameter);
                 var result = _mapper.MapFromApiResponseObject(response);
 
