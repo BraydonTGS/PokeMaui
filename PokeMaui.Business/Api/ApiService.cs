@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PokeMaui.Global.Exceptions;
 
 namespace PokeMaui.Business.Api
 {
@@ -24,6 +25,7 @@ namespace PokeMaui.Business.Api
             {
                 var response = await _client.GetStringAsync(_baseApiUrl + parameters);
                 var results = JsonConvert.DeserializeObject<TResponse>(response);
+                if(results is null) return default;
                 return results;
             }
             catch (Exception ex)
