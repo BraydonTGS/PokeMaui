@@ -4,9 +4,9 @@
     /// Interface used to define functionality that will be implemented by <see cref="ApiService{TResponse}"/>
     /// </summary>
     /// <typeparam name="TResponse"></typeparam>
-    public interface IApiService<TResponse>
+    public interface IApiService
     {
-        void SetApiUrl(string apiUrl, string parameters);
-        public Task<TResponse> GetApiResponseAsync();      
+        public void SetBaseApiUrl(string baseApiUrl);
+        public Task<TResponse> GetApiResponseAsync<TResponse>(string parameters = "");
     }
 }

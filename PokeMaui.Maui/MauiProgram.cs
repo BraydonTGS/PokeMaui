@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using PokeMaui.Business.Api;
-using PokeMaui.Business.Models;
+﻿using PokeMaui.Business.Api;
 
 namespace PokeMaui.Maui
 {
@@ -18,8 +16,8 @@ namespace PokeMaui.Maui
 
             // Todo: Register My Services in my Business Project for Business Needs //
             builder.Services.AddScoped<HttpClient>();
-            builder.Services.AddScoped<PokemonApiService>();    
-            builder.Services.AddScoped<IApiService<PokemonApiResponse>, ApiService<PokemonApiResponse>>();
+            builder.Services.AddScoped<PokemonApiService>();
+            builder.Services.AddScoped<IApiService, ApiService>();
 
             builder.Services.AddSingleton<MainPage>();
 
