@@ -1,4 +1,5 @@
 ﻿using PokeMaui.Business.Api;
+using PokeMaui.Business.Config;
 
 namespace PokeMaui.Maui
 {
@@ -14,10 +15,7 @@ namespace PokeMaui.Maui
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
-            // Todo: Register My Services in my Business Project for Business Needs //
-            builder.Services.AddScoped<HttpClient>();
-            builder.Services.AddScoped<PokemonApiService>();
-            builder.Services.AddScoped<IApiService, ApiService>();
+            Services.ConfigureServices(builder.Services);
 
             builder.Services.AddSingleton<MainPage>();
 

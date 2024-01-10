@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PokeMaui.Business.Models;
 using PokeMaui.Global.Exceptions;
 
 namespace PokeMaui.Business.Api
@@ -25,12 +26,18 @@ namespace PokeMaui.Business.Api
             {
                 var response = await _client.GetStringAsync(_baseApiUrl + parameters);
                 var results = JsonConvert.DeserializeObject<TResponse>(response);
-                if(results is null) return default;
+
+                if (results is null) return Activator.CreateInstance<TResponse>();
                 return results;
             }
             catch (Exception ex)
             {
-                throw new ApiException("An error occurred while processing the request.", ex);
+                if (ex.GetType() == typeof(JsonSerializationException))
+                {
+                    throw new JsonException("An error occurred while deserializing the API response.", ex);
+                }
+                else
+                    throw new ApiException("An error occurred while processing the request.", ex);
             }
 
         }
