@@ -1,7 +1,4 @@
-﻿
-using AutoMapper;
-using PokeMaui.Business.Mappers;
-using PokeMaui.Business.MappingProfile;
+﻿using PokeMaui.Business.Mappers;
 using PokeMaui.Business.Models;
 using PokeMaui.Global.Constants;
 
@@ -15,7 +12,7 @@ namespace PokeMaui.Business.Api
         private readonly IApiService _apiService;
         private readonly IApiResponseMapper<PokemonDto, PokemonApiResponse> _mapper;
 
-        public PokemonApiService(IApiService apiService, 
+        public PokemonApiService(IApiService apiService,
             IApiResponseMapper<PokemonDto, PokemonApiResponse> mapper)
         {
             _apiService = apiService;
@@ -42,10 +39,8 @@ namespace PokeMaui.Business.Api
 
                 return result;
             }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            catch (Exception) { throw; }
+
         }
 
 

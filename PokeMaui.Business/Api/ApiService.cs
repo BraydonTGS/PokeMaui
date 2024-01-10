@@ -30,7 +30,7 @@ namespace PokeMaui.Business.Api
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error: {ex.Message}");
+                throw new ApiException("An error occurred while processing the request.", ex);
             }
 
         }
