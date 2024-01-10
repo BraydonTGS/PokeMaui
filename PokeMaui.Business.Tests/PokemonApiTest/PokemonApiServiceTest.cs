@@ -24,6 +24,7 @@ namespace PokeMaui.Business.Tests.PokemonApiTest
             _pokemonApiService = _serviceProvider.GetRequiredService<PokemonApiService>();
         }
 
+        #region PokemonApiService_NoName_ReturnsNull_Success
         [TestMethod]
         public async Task PokemonApiService_NoName_ReturnsNull_Success()
         {
@@ -31,7 +32,9 @@ namespace PokeMaui.Business.Tests.PokemonApiTest
 
             Assert.IsNull(pokemon);
         }
+        #endregion
 
+        #region PokemonApiService_GetByPokemonName_Success
         [TestMethod]
         [DataRow(Constants.Ditto, Constants.Ditto)]
         [DataRow(Constants.Pikachu, Constants.Pikachu)]
@@ -52,7 +55,9 @@ namespace PokeMaui.Business.Tests.PokemonApiTest
             Assert.AreEqual(pokemon.Name, expectedName);
             Assert.IsNotNull(pokemon.Sprite);
         }
+        #endregion
 
+        #region PokemonApiService_GetByPokemonId_Success
         [TestMethod]
         [DataRow(1, Constants.Bulbasaur)]
         [DataRow(2, Constants.Ivysaur)]
@@ -74,6 +79,9 @@ namespace PokeMaui.Business.Tests.PokemonApiTest
             Assert.IsNotNull(pokemon.Sprite);
         }
 
+        #endregion
+
+        #region PokemonApiService_NameNotFound_ThrowsApiException_404_Success
         [TestMethod]
         public async Task PokemonApiService_NameNotFound_ThrowsApiException_404_Success()
         {
@@ -90,5 +98,6 @@ namespace PokeMaui.Business.Tests.PokemonApiTest
             Assert.AreEqual("Response status code does not indicate success: 404 (Not Found).", apiException.InnerException.Message);
 
         }
+        #endregion
     }
 }
