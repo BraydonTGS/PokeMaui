@@ -7,14 +7,14 @@ using PokeMaui.Business.Models;
 
 namespace PokeMaui.Business.Config
 {
-    public static class Services
+    public static class BusinessServices
     {
         /// <summary>
         /// Register any Dependencies Needed for the Business Project
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection ConfigureServices(IServiceCollection services)
+        public static IServiceCollection ConfigureBusinessServices(IServiceCollection services)
         {
             // Register Mapping Profiles //
             var mapperConfig = new MapperConfiguration(map =>

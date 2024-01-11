@@ -1,5 +1,5 @@
-﻿using PokeMaui.Business.Api;
-using PokeMaui.Business.Config;
+﻿using PokeMaui.Business.Config;
+using PokeMaui.Maui.Config;
 
 namespace PokeMaui.Maui
 {
@@ -15,9 +15,9 @@ namespace PokeMaui.Maui
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
-            Services.ConfigureServices(builder.Services);
 
-            builder.Services.AddSingleton<MainPage>();
+            BusinessServices.ConfigureBusinessServices(builder.Services);
+            MauiServices.ConfigureMauiServices(builder.Services);
 
             return builder.Build();
         }

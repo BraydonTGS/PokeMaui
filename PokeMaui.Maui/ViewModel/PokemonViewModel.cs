@@ -1,7 +1,9 @@
-﻿using PokeMaui.Business.Api;
+﻿using CommunityToolkit.Mvvm.Input;
+using PokeMaui.Business.Api;
 using PokeMaui.Business.Models;
 using PokeMaui.Global.Constants;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace PokeMaui.Maui.ViewModel
 {
@@ -11,29 +13,53 @@ namespace PokeMaui.Maui.ViewModel
 
         public ObservableCollection<PokemonDto> Pokemons { get; set; }
 
+
         public PokemonViewModel(PokemonApiService apiService)
         {
             _apiService = apiService;
 
-            Task.WaitAll(InitTestData());
+            Title = "Poke-Maui!";
+
+            Pokemons = new();
         }
 
+
         #region InitTestData
+
         /// <summary>
         /// For now Init with Test Data
         /// </summary>
         /// <returns></returns>
-        private async Task InitTestData()
+        [RelayCommand]
+        private async Task InitTestDataAsync()
         {
-            Pokemons = new ObservableCollection<PokemonDto>();
-            var testNames = new List<string>() { Constants.Charmander, Constants.Charmeleon, Constants.Charizard };
-
-            foreach (var test in testNames)
+            try
             {
-                var dto = await _apiService.GetByNameAsync(test);
+                if (IsBusy) return;
 
-                if (dto != null) { Pokemons.Add(dto); }
+                IsBusy = true;
+
+                if (Pokemons.Any()) { return; }
+
+                var testNames = new List<string>() { Constants.Charmander, Constants.Charmeleon, Constants.Charizard };
+
+                if (Pokemons.Count != 0)
+                    Pokemons.Clear();
+
+                foreach (var test in testNames)
+                {
+                    var dto = await _apiService.GetByNameAsync(test);
+                    if (dto != null)
+                        Pokemons.Add(dto);
+                }
             }
+            catch (Exception ex)
+            {
+                // Todo: Navigate to Error View with Message - Don't Crash //
+                Debug.WriteLine($"Error: {ex.Message}");
+                await Shell.Current.DisplayAlert("Error:", $"Unable to get the Specified Pokemon", "OK");
+            }
+            finally { IsBusy = false; }
         }
         #endregion
     }

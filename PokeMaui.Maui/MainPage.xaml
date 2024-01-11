@@ -3,48 +3,12 @@
     x:Class="PokeMaui.Maui.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:model="clr-namespace:PokeMaui.Business.Models;assembly=PokeMaui.Business">
+    xmlns:local="clr-namespace:PokeMaui.Maui.View"
+    xmlns:model="clr-namespace:PokeMaui.Business.Models;assembly=PokeMaui.Business"
+    xmlns:viewmodel="clr-namespace:PokeMaui.Maui.ViewModel"
+    x:DataType="viewmodel:MainViewModel">
 
-    <CollectionView>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type model:PokemonDto}">
-
-                <model:PokemonDto Name="Ditto" BaseExperience="940">
-                    <model:PokemonDto.Sprite>
-                        <model:SpriteDto Image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
-                    </model:PokemonDto.Sprite>
-                </model:PokemonDto>
-
-                <model:PokemonDto Name="Pikachu" BaseExperience="376">
-                    <model:PokemonDto.Sprite>
-                        <model:SpriteDto Image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" />
-                    </model:PokemonDto.Sprite>
-                </model:PokemonDto>
-
-                <model:PokemonDto Name="Charizard" BaseExperience="935">
-                    <model:PokemonDto.Sprite>
-                        <model:SpriteDto Image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
-                    </model:PokemonDto.Sprite>
-                </model:PokemonDto>
-            </x:Array>
-        </CollectionView.ItemsSource>
-
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:PokemonDto">
-                <HorizontalStackLayout Padding="10">
-                    <Image
-                        Aspect="AspectFit"
-                        Background="#A9A9A9"
-                        HeightRequest="100"
-                        HorizontalOptions="Center"
-                        Source="{Binding Sprite.Image}"
-                        VerticalOptions="Center" />
-                    <VerticalStackLayout Padding="10" Spacing="4">
-                        <Label FontSize="25" Text="{Binding Name}" />
-                        <Label FontSize="12" Text="{Binding BaseExperience}" />
-                    </VerticalStackLayout>
-                </HorizontalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <StackLayout>
+        <local:PokemonView BindingContext="{Binding PokemonViewModel}" />
+    </StackLayout>
 </ContentPage>
