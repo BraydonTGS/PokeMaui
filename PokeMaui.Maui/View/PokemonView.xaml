@@ -4,11 +4,51 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     BindingContext="{Binding}">
-    <VerticalStackLayout>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
         <Label
-            HorizontalOptions="Center"
+            Grid.Row="0"
             Text="{Binding Title}"
-            TextColor="Black"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+            TextColor="Black" />
+        <Button
+            Grid.Row="1"
+            BackgroundColor="Blue"
+            Command="{Binding InitTestDataCommand}"
+            Text="Load Pokemon"
+            TextColor="Black" />
+    </Grid>
+
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>s
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+        <CollectionView ItemsSource="{Binding Pokemons}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Name}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button
+            Command="{Binding InitTestDataCommand}"
+            IsEnabled="{Binding IsNotBusy}"
+            Text="Load Pokemon" />
+    </Grid>-->
 </ContentView>

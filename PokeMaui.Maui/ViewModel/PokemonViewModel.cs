@@ -18,8 +18,8 @@ namespace PokeMaui.Maui.ViewModel
         {
             _apiService = apiService;
 
-            Title = "Poke-Maui!";
-
+            Title = "PokemonViewModel";
+            
             Pokemons = new();
         }
 
