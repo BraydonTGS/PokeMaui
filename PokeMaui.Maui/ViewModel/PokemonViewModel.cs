@@ -17,7 +17,7 @@ namespace PokeMaui.Maui.ViewModel
             _apiService = apiService;
 
             Title = "PokemonViewModel";
-         
+
             Pokemons = new();
         }
 
@@ -29,14 +29,15 @@ namespace PokeMaui.Maui.ViewModel
         /// </summary>
         /// <returns></returns>
         [RelayCommand]
-        private async Task InitTestDataAsync()
+        private async Task GenerateRandomPokemonAsync()
         {
             try
             {
                 if (IsBusy) return;
                 IsBusy = true;
-        
-                if (Pokemons.Any()) { return; }
+
+                if (Pokemons.Count != 0)
+                    Pokemons.Clear();
 
                 var random = new Random();
                 var pokemonId = new HashSet<int>();
@@ -46,7 +47,7 @@ namespace PokeMaui.Maui.ViewModel
                     int randomId;
                     do
                         randomId = random.Next(1, 999);
-                     while (pokemonId.Contains(randomId));
+                    while (pokemonId.Contains(randomId));
 
                     pokemonId.Add(randomId);
 
@@ -66,18 +67,5 @@ namespace PokeMaui.Maui.ViewModel
             finally { IsBusy = false; }
         }
         #endregion
-
-        /// <summary>
-        /// Refresh the Pokemon Collection with a new set of Pokemon
-        /// </summary>
-        /// <returns></returns>
-        [RelayCommand]
-        private async Task RefreshAsync()
-        {
-            if (Pokemons.Count != 0)
-                Pokemons.Clear();
-
-            await InitTestDataAsync();
-        }
     }
 }
