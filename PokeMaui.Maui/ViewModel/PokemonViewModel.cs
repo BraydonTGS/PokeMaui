@@ -39,23 +39,10 @@ namespace PokeMaui.Maui.ViewModel
                 if (Pokemons.Count != 0)
                     Pokemons.Clear();
 
-                var random = new Random();
-                var pokemonId = new HashSet<int>();
-
-                for (int i = 1; i <= 20; i++)
-                {
-                    int randomId;
-                    do
-                        randomId = random.Next(1, 999);
-                    while (pokemonId.Contains(randomId));
-
-                    pokemonId.Add(randomId);
-
-                    var dto = await _apiService.GetByIdAsync(randomId);
-
-                    if (dto != null)
-                        Pokemons.Add(dto);
-                }
+                var caughtPokemon = await _apiService.GenerateRandomPokemonAsync(50);
+                if (caughtPokemon?.Count > 0)
+                    foreach (var pokemon in caughtPokemon)
+                        Pokemons.Add(pokemon);
 
             }
             catch (Exception ex)

@@ -1,6 +1,7 @@
 ﻿using PokeMaui.Business.Mappers;
 using PokeMaui.Business.Models;
 using PokeMaui.Global.Constants;
+using System.Collections.ObjectModel;
 
 namespace PokeMaui.Business.Api
 {
@@ -20,6 +21,7 @@ namespace PokeMaui.Business.Api
             _apiService.SetBaseApiUrl(Constants.PokemonApiUrl);
         }
 
+        #region GetByNameAsync
         /// <summary>
         /// Get by the Pokemon Name
         /// 
@@ -42,8 +44,9 @@ namespace PokeMaui.Business.Api
             catch (Exception) { throw; }
 
         }
+        #endregion
 
-
+        #region GetByIdAsync
         /// <summary>
         /// Get by the Pokemon Id
         /// 
@@ -61,10 +64,44 @@ namespace PokeMaui.Business.Api
 
                 return result;
             }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            catch (Exception) { throw; }
         }
+        #endregion
+
+        #region GenerateRandomPokemonAsync
+        /// <summary>
+        /// Generates 20 Random Pokemon
+        /// </summary>
+        /// <returns></returns>
+        public async Task<ObservableCollection<PokemonDto>> GenerateRandomPokemonAsync(int numToGenerate = 20)
+        {
+            try
+            {
+                if (numToGenerate is 0) numToGenerate = 20;
+                var caughtPokemon = new ObservableCollection<PokemonDto>();
+
+                var random = new Random();
+                var pokemonId = new HashSet<int>();
+
+                for (int i = 1; i <= numToGenerate; i++)
+                {
+                    int randomId;
+                    do
+                        randomId = random.Next(1, 999);
+                    while (pokemonId.Contains(randomId));
+
+                    pokemonId.Add(randomId);
+
+                    var dto = await GetByIdAsync(randomId);
+
+                    if (dto != null)
+                        caughtPokemon.Add(dto);
+                }
+
+                return caughtPokemon;
+            }
+            catch (Exception) { throw; }
+        }
+        #endregion
     }
 }

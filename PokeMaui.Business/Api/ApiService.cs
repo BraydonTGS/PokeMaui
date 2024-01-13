@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using PokeMaui.Business.Models;
 using PokeMaui.Global.Exceptions;
 
 namespace PokeMaui.Business.Api
