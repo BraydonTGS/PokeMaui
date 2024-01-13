@@ -5,50 +5,67 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     BindingContext="{Binding}">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
+    <Grid BackgroundColor="{StaticResource PrimaryYellow}"
+        ColumnDefinitions="*, *"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-
-        <Label
+        <CollectionView
             Grid.Row="0"
-            Text="{Binding Title}"
-            TextColor="Black" />
-        <Button
-            Grid.Row="1"
-            BackgroundColor="Blue"
-            Command="{Binding InitTestDataCommand}"
-            Text="Load Pokemon"
-            TextColor="Black" />
-    </Grid>
-
-    <!--<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>s
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-
-
-        <CollectionView ItemsSource="{Binding Pokemons}">
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Pokemons}"
+            SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Name}" />
+                    <Grid Padding="10">
+                        <Frame
+                            Padding="0"
+                            HeightRequest="140"
+                            Style="{StaticResource CardView}">
+                            <Grid Padding="0" ColumnDefinitions="135, *">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="135"
+                                    Source="{Binding Sprite.Image}"
+                                    WidthRequest="135" />
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Padding="10"
+                                    VerticalOptions="Center">
+                                    <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
+                                    <Label Style="{StaticResource MediumLabel}" Text="Types..." />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
         <Button
+            Grid.Row="1"
+            Margin="10"
             Command="{Binding InitTestDataCommand}"
             IsEnabled="{Binding IsNotBusy}"
-            Text="Load Pokemon" />
-    </Grid>-->
+            Style="{StaticResource ButtonOutline}"
+            Text="Discover" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="10"
+            Command="{Binding RefreshCommand}"
+            IsEnabled="{Binding IsNotBusy}"
+            Style="{StaticResource ButtonOutline}"
+            Text="Refresh" />
+
+        <ActivityIndicator
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="FillAndExpand"
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="CenterAndExpand"
+            Color="{StaticResource Accent}" />
+    </Grid>
 </ContentView>

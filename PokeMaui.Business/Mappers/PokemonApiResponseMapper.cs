@@ -25,6 +25,11 @@ namespace PokeMaui.Business.Mappers
         /// 
         /// Sprite
         /// 
+        /// Types
+        /// 
+        /// Abilities
+        /// 
+        /// BaseExp
         /// </summary>
         /// <param name="response"></param>
         /// <returns></returns>
@@ -39,6 +44,8 @@ namespace PokeMaui.Business.Mappers
             if (response.sprites is not null)
                 GeneratePokemonSpriteFromResponse(pokemonDto, response.sprites);
 
+            if (response.base_experience is not null)
+                pokemonDto.BaseExperience = (int)response.base_experience;
             return pokemonDto;
         }
         #endregion

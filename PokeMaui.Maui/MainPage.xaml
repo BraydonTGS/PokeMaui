@@ -8,7 +8,7 @@
     xmlns:viewmodel="clr-namespace:PokeMaui.Maui.ViewModel"
     x:DataType="viewmodel:MainViewModel">
 
-    <StackLayout>
-        <local:PokemonView BindingContext="{Binding PokemonViewModel}" />
-    </StackLayout>
+
+    <local:PokemonView BindingContext="{Binding PokemonViewModel}" />
+
 </ContentPage>
