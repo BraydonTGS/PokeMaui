@@ -27,29 +27,19 @@
                                 <Image
                                     Aspect="AspectFill"
                                     HeightRequest="135"
-                                    Source="{Binding Sprite.Image}"
-                                    WidthRequest="135" />
-                                <VerticalStackLayout
-                                    Grid.Column="1"
-                                    Padding="10"
                                     HorizontalOptions="Center"
-                                    VerticalOptions="Center">
-                                    <Label
-                                        FontAttributes="Bold"
-                                        Style="{StaticResource LargeLabel}"
-                                        Text="{Binding Name}" />
-                                    <CollectionView ItemsSource="{Binding PokemonTypes}" SelectionMode="None">
-                                        <CollectionView.ItemTemplate>
-                                            <DataTemplate>
-                                                <!--  Display the type name  -->
-                                                <Label
-                                                    FontAttributes="Italic"
-                                                    Style="{StaticResource MediumLabel}"
-                                                    Text="{Binding Type.Name}" />
-                                            </DataTemplate>
-                                        </CollectionView.ItemTemplate>
-                                    </CollectionView>
-                                </VerticalStackLayout>
+                                    Source="{Binding Sprite.Image}"
+                                    VerticalOptions="Center"
+                                    WidthRequest="135" />
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="10,0,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="25"
+                                    HorizontalOptions="Start"
+                                    Style="{StaticResource LargeLabel}"
+                                    Text="{Binding Name}"
+                                    VerticalOptions="Center" />
                             </Grid>
                         </Frame>
                     </Grid>
