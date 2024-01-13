@@ -32,9 +32,23 @@
                                 <VerticalStackLayout
                                     Grid.Column="1"
                                     Padding="10"
+                                    HorizontalOptions="Center"
                                     VerticalOptions="Center">
-                                    <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
-                                    <Label Style="{StaticResource MediumLabel}" Text="Types..." />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        Style="{StaticResource LargeLabel}"
+                                        Text="{Binding Name}" />
+                                    <CollectionView ItemsSource="{Binding PokemonTypes}" SelectionMode="None">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <!--  Display the type name  -->
+                                                <Label
+                                                    FontAttributes="Italic"
+                                                    Style="{StaticResource MediumLabel}"
+                                                    Text="{Binding Type.Name}" />
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
                                 </VerticalStackLayout>
                             </Grid>
                         </Frame>
