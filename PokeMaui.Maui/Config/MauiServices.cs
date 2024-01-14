@@ -15,16 +15,16 @@ namespace PokeMaui.Maui.Config
         {
             // ViewModels //
             services.AddSingleton<PokemonViewModel>();
-            services.AddSingleton<PokemonDetailsViewModel>();
+            services.AddTransient<PokemonDetailsViewModel>();
             services.AddSingleton<MainViewModel>();
 
             // Views & Pages //
             services.AddSingleton<PokemonView>();
-            services.AddSingleton<PokemonDetailsView>();
+            services.AddTransient<PokemonDetailsView>();
             services.AddSingleton<MainPage>();
 
             // Navigation Service //
-            services.AddSingleton<INavigationService, ShellNavigationService>();
+            services.AddScoped<INavigationService, ShellNavigationService>();
 
             return services;
 

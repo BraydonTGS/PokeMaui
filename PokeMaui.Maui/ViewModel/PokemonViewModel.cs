@@ -37,7 +37,7 @@ namespace PokeMaui.Maui.ViewModel
 
             var navigationParameters = new Dictionary<string, object>() { { nameof(PokemonDto), dto } };
 
-            await _navigationService.NavigateToAsync(nameof(PokemonDto), navigationParameters);
+            await _navigationService.NavigateToAsync(nameof(PokemonDetailsView), navigationParameters);
         }
         #endregion
 

@@ -7,7 +7,7 @@
     <VerticalStackLayout>
         <Label
             HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
+            Text="{Binding PokemonDto.Name}"
             VerticalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>
