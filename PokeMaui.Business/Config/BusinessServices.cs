@@ -1,8 +1,6 @@
-﻿using AutoMapper;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using PokeMaui.Business.Api;
 using PokeMaui.Business.Mappers;
-using PokeMaui.Business.MappingProfile;
 using PokeMaui.Business.Models;
 
 namespace PokeMaui.Business.Config
@@ -16,15 +14,6 @@ namespace PokeMaui.Business.Config
         /// <returns></returns>
         public static IServiceCollection ConfigureBusinessServices(IServiceCollection services)
         {
-            // Register Mapping Profiles //
-            var mapperConfig = new MapperConfiguration(map =>
-            {
-                map.AddProfile<MappingProfiles>();
-            });
-
-            // Auto Mapper //
-            services.AddSingleton(mapperConfig.CreateMapper());
-
             // Services //
             services.AddScoped<HttpClient>();
             services.AddScoped<PokemonApiService>();

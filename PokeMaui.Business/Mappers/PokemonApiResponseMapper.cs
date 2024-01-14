@@ -1,10 +1,8 @@
 ﻿using PokeMaui.Business.Api;
 using PokeMaui.Business.Helpers;
 using PokeMaui.Business.Models;
-using PokeMaui.Entity.Entities;
 using PokeMaui.Global.Constants;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace PokeMaui.Business.Mappers
 {
@@ -12,7 +10,7 @@ namespace PokeMaui.Business.Mappers
     /// PokemonApiResponseMapper - Map From the PokemonApiResponse to the PokemonDto
     /// </summary>
     public class PokemonApiResponseMapper : IApiResponseMapper<PokemonDto, PokemonApiResponse>
-    {    
+    {
         public PokemonApiResponseMapper()
         {
         }
@@ -127,30 +125,30 @@ namespace PokeMaui.Business.Mappers
                     dtoType.PokemonId = pokemonDto.Id;
                     dtoType.TypeId = dtoType.Type.Id;
 
-                  pokemonTypes.Add(dtoType);
-                }           
+                    pokemonTypes.Add(dtoType);
+                }
             }
             pokemonDto.PokemonTypes = pokemonTypes;
         }
-            #endregion
+        #endregion
 
-            #region GenerateEmptyPokemonDto
-            /// <summary>
-            /// Created an Empty Instance of a PokemonDto
-            /// </summary>
-            /// <returns></returns>
-            private PokemonDto GenerateEmptyPokemonDto()
+        #region GenerateEmptyPokemonDto
+        /// <summary>
+        /// Created an Empty Instance of a PokemonDto
+        /// </summary>
+        /// <returns></returns>
+        private PokemonDto GenerateEmptyPokemonDto()
+        {
+            return new PokemonDto()
             {
-                return new PokemonDto()
-                {
-                    Id = Guid.NewGuid(),
-                    Sprite = new SpriteDto(),
-                    PokemonAbility = new ObservableCollection<PokemonAbilityDto>(),
-                    PokemonTypes = new ObservableCollection<PokemonTypesDto>(),
-                    Forms = new ObservableCollection<FormDto>(),
-                    PokemonMoves = new ObservableCollection<PokemonMovesDto>(),
-                };
-            }
+                Id = Guid.NewGuid(),
+                Sprite = new SpriteDto(),
+                PokemonAbility = new ObservableCollection<PokemonAbilityDto>(),
+                PokemonTypes = new ObservableCollection<PokemonTypesDto>(),
+                Forms = new ObservableCollection<FormDto>(),
+                PokemonMoves = new ObservableCollection<PokemonMovesDto>(),
+            };
+        }
         #endregion
     }
-    }
+}
