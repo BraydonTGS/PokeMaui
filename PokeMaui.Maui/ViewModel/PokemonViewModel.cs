@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using PokeMaui.Business.Api;
 using PokeMaui.Business.Models;
+using PokeMaui.Maui.Navigation;
+using PokeMaui.Maui.View;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -9,21 +11,37 @@ namespace PokeMaui.Maui.ViewModel
     public partial class PokemonViewModel : BaseViewModel
     {
         private readonly PokemonApiService _apiService;
+        private readonly INavigationService _navigationService;
 
         public ObservableCollection<PokemonDto> Pokemons { get; set; }
 
-        public PokemonViewModel(PokemonApiService apiService)
+        public PokemonViewModel(PokemonApiService apiService, INavigationService navigationService)
         {
             _apiService = apiService;
-
+            _navigationService = navigationService;
             Title = "PokemonViewModel";
-
             Pokemons = new();
         }
 
 
-        #region InitTestData
+        #region NavigateToDetailsAsync
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        [RelayCommand]
+        public async Task NavigateToDetailsAsync(PokemonDto dto)
+        {
+            if (dto is null) return;
 
+            var navigationParameters = new Dictionary<string, object>() { { nameof(PokemonDto), dto } };
+
+            await _navigationService.NavigateToAsync(nameof(PokemonDto), navigationParameters);
+        }
+        #endregion
+
+        #region GenerateRandomPokemonAsync
         /// <summary>
         /// For now Init with Test Data
         /// </summary>

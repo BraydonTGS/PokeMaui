@@ -1,4 +1,5 @@
-﻿using PokeMaui.Maui.View;
+﻿using PokeMaui.Maui.Navigation;
+using PokeMaui.Maui.View;
 using PokeMaui.Maui.ViewModel;
 
 namespace PokeMaui.Maui.Config
@@ -17,9 +18,13 @@ namespace PokeMaui.Maui.Config
             services.AddSingleton<PokemonDetailsViewModel>();
             services.AddSingleton<MainViewModel>();
 
-            // Views //
+            // Views & Pages //
             services.AddSingleton<PokemonView>();
+            services.AddSingleton<PokemonDetailsView>();
             services.AddSingleton<MainPage>();
+
+            // Navigation Service //
+            services.AddSingleton<INavigationService, ShellNavigationService>();
 
             return services;
 

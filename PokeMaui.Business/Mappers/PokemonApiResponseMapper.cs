@@ -142,7 +142,7 @@ namespace PokeMaui.Business.Mappers
             return new PokemonDto()
             {
                 Id = Guid.NewGuid(),
-                Sprite = new SpriteDto(),
+                Sprite = new SpriteDto() {Id = Guid.NewGuid() },
                 PokemonAbility = new ObservableCollection<PokemonAbilityDto>(),
                 PokemonTypes = new ObservableCollection<PokemonTypesDto>(),
                 Forms = new ObservableCollection<FormDto>(),

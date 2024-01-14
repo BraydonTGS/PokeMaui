@@ -3,6 +3,7 @@
     x:Class="PokeMaui.Maui.View.PokemonView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModel="clr-namespace:PokeMaui.Maui.ViewModel"
     BindingContext="{Binding}">
 
     <Grid
@@ -23,6 +24,12 @@
                             Padding="0"
                             HeightRequest="140"
                             Style="{StaticResource CardView}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:PokemonViewModel}}, Path=NavigateToDetailsCommand}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="2" />
+                            </Frame.GestureRecognizers>
                             <Grid Padding="0" ColumnDefinitions="135, *">
                                 <Image
                                     Aspect="AspectFill"

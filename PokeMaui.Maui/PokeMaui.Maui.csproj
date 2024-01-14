@@ -29,7 +29,7 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<!-- <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" /> -->
-		<MauiIcon Include="Resources\AppIcon\pokemon_logo.png" Color ="#FF0000" />
+		<MauiIcon Include="Resources\AppIcon\pokemon_logo.png" Color="#FF0000" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -59,6 +59,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="View\PokemonDetailsView.xaml.cs">
+	    <DependentUpon>PokemonDetailsView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\PokemonDetailsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\PokemonView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
