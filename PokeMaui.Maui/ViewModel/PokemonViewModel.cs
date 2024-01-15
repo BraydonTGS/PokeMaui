@@ -26,7 +26,7 @@ namespace PokeMaui.Maui.ViewModel
 
         #region NavigateToDetailsAsync
         /// <summary>
-        /// 
+        /// Navigate to the PokemonDetailsView
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
