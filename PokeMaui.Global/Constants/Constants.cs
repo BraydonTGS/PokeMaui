@@ -34,5 +34,9 @@
         public const string Snorlax = "Snorlax";
         public const string Mew = "Mew";
         #endregion
+
+        #region Navigation
+        public const string PokemonKey = "Pokemon-Key";
+        #endregion
     }
 }

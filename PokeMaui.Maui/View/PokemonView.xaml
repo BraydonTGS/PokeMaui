@@ -7,11 +7,12 @@
     BindingContext="{Binding}">
 
     <Grid
-        BackgroundColor="{StaticResource PrimaryYellow}"
+        BackgroundColor="{StaticResource Isabelline}"
         ColumnDefinitions="*, *"
         ColumnSpacing="5"
         RowDefinitions="*,Auto">
 
+        <!--  Pokemon List  -->
         <CollectionView
             Grid.Row="0"
             Grid.ColumnSpan="2"
@@ -22,6 +23,7 @@
                     <Grid Padding="10">
                         <Frame
                             Padding="0"
+                            BorderColor="{StaticResource GoldFoil}"
                             HeightRequest="140"
                             Style="{StaticResource CardView}">
                             <Frame.GestureRecognizers>
@@ -56,11 +58,14 @@
 
         <Button
             Grid.Row="1"
+            Grid.Column="1"
             Margin="10"
             Command="{Binding GenerateRandomPokemonCommand}"
+            HorizontalOptions="End"
             IsEnabled="{Binding IsNotBusy}"
             Style="{StaticResource ButtonOutline}"
-            Text="Discover" />
+            Text="Discover"
+            VerticalOptions="Center" />
 
         <ActivityIndicator
             Grid.RowSpan="2"

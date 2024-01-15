@@ -1,10 +1,13 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿
+using CommunityToolkit.Mvvm.Input;
 using PokeMaui.Business.Api;
 using PokeMaui.Business.Models;
+using PokeMaui.Global.Constants;
 using PokeMaui.Maui.Navigation;
 using PokeMaui.Maui.View;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+
 
 namespace PokeMaui.Maui.ViewModel
 {
@@ -35,7 +38,7 @@ namespace PokeMaui.Maui.ViewModel
         {
             if (dto is null) return;
 
-            var navigationParameters = new Dictionary<string, object>() { { nameof(PokemonDto), dto } };
+            var navigationParameters = new Dictionary<string, object>() { { Constants.PokemonKey, dto } };
 
             await _navigationService.NavigateToAsync(nameof(PokemonDetailsView), navigationParameters);
         }

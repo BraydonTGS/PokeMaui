@@ -48,6 +48,16 @@ namespace PokeMaui.Business.Mappers
             if (response.base_experience is not null)
                 pokemonDto.BaseExperience = (int)response.base_experience;
 
+            if(response.height is not null)
+                pokemonDto.Height = (int)response.height;
+
+            if(response.weight is not null)
+                pokemonDto.Weight = (int)response.weight;
+
+            if(response.order is not null)
+                pokemonDto.Order = (int)response.order;
+
+
 
             return pokemonDto;
         }
