@@ -45,6 +45,9 @@ namespace PokeMaui.Business.Mappers
             if (response.types is not null)
                 GeneratePokemonTypesFromResponse(pokemonDto, response.types);
 
+            if (response.abilities is not null)
+                GeneratePokemonAbilitiesFromResponse(pokemonDto, response.abilities);
+
             if (response.base_experience is not null)
                 pokemonDto.BaseExperience = (int)response.base_experience;
 
@@ -139,6 +142,40 @@ namespace PokeMaui.Business.Mappers
                 }
             }
             pokemonDto.PokemonTypes = pokemonTypes;
+        }
+        #endregion
+
+        #region GeneratePokemonAbilitiesFromResponse
+        /// <summary>
+        /// Generates the Collection of PokemonAbilityDto(s) from the PokemonApiResponse's Abilities Property
+        /// </summary>
+        /// <param name="pokemonDto"></param>
+        /// <param name="abilities"></param>
+        private void GeneratePokemonAbilitiesFromResponse(PokemonDto pokemonDto, List<Ability> abilities)
+        {
+            if (abilities.Count == 0) return;
+
+            var pokemonAbilities = new ObservableCollection<PokemonAbilityDto>();
+
+            foreach (var ability in abilities)
+            {
+                if (ability.ability is not null)
+                {
+                    var dtoType = new PokemonAbilityDto()
+                    {
+                        Ability = new AbilityDto()
+                        {
+                            Id = Guid.NewGuid(),
+                            Name = ability.ability?.name is not null ? FormattingHelpers.UppercaseFirstCharacter(ability.ability.name) : Constants.NotAvailable
+                        },
+                    };
+                    dtoType.PokemonId = pokemonDto.Id;
+                    dtoType.AbilityId = dtoType.Ability.Id;
+
+                    pokemonAbilities.Add(dtoType);
+                }
+            }
+            pokemonDto.PokemonAbility = pokemonAbilities;
         }
         #endregion
 

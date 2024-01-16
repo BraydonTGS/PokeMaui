@@ -17,6 +17,10 @@ namespace PokeMaui.Business.Models
 
         public int Height { get; set; }
 
+        public string FullTypeDisplay { get; set; }
+
+        public string FullAbilityDisplay { get; set; }
+
         public SpriteDto Sprite { get; set; }
 
         public IEnumerable<PokemonTypesDto> PokemonTypes { get; set; }
