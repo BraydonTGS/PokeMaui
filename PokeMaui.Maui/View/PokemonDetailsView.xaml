@@ -61,14 +61,13 @@
                 Background="{StaticResource Isabelline}"
                 Spacing="20">
 
-                <!--<Label Style="{StaticResource LargeLabel}" Text="{Binding PokemonDto.Name, StringFormat='Name: {0}'}" />-->
-
                 <Label Style="{StaticResource MediumLabel}" Text="{Binding PokemonDto.Weight, StringFormat='Weight: {0}'}" />
 
                 <Label Style="{StaticResource MediumLabel}" Text="{Binding PokemonDto.Height, StringFormat='Height: {0}'}" />
 
                 <Label Style="{StaticResource MediumLabel}" Text="{Binding PokemonDto.BaseExperience, StringFormat='Base Experience: {0}'}" />
 
+                <Line BackgroundColor="{StaticResource Accent}" />
                 <!--  Collection Details  -->
                 <Grid
                     ColumnDefinitions="*, *"

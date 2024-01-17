@@ -23,9 +23,10 @@ namespace PokeMaui.Maui.Config
             services.AddTransient<PokemonDetailsView>();
             services.AddSingleton<MainPage>();
 
-            // Navigation Service //
+            // Services //
+            services.AddSingleton(Connectivity.Current);
             services.AddScoped<INavigationService, ShellNavigationService>();
-
+          
             return services;
 
         }

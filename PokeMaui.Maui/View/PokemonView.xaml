@@ -3,7 +3,9 @@
     x:Class="PokeMaui.Maui.View.PokemonView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:viewModel="clr-namespace:PokeMaui.Maui.ViewModel"
+    ios:Page.UseSafeArea="True"
     BindingContext="{Binding}">
 
     <Grid
@@ -20,39 +22,28 @@
             SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10">
-                        <Frame
-                            Padding="0"
-                            BorderColor="{StaticResource GoldFoil}"
-                            HeightRequest="140"
-                            Style="{StaticResource CardView}">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:PokemonViewModel}}, Path=NavigateToDetailsCommand}"
-                                    CommandParameter="{Binding .}"
-                                    NumberOfTapsRequired="1" />
-                            </Frame.GestureRecognizers>
-                            <Grid Padding="0" ColumnDefinitions="135, *">
-                                <Image
-                                    Aspect="AspectFill"
-                                    HeightRequest="135"
-                                    HorizontalOptions="Center"
-                                    Source="{Binding Sprite.Image}"
-                                    VerticalOptions="Center"
-                                    WidthRequest="135" />
-                                <Label
-                                    Grid.Column="1"
-                                    Margin="10,0,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="25"
-                                    HorizontalOptions="Start"
-                                    LineBreakMode="TailTruncation"
-                                    Style="{StaticResource LargeLabel}"
-                                    Text="{Binding Name}"
-                                    VerticalOptions="Center" />
-                            </Grid>
-                        </Frame>
-                    </Grid>
+
+                    <Frame
+                        Padding="0"
+                        BorderColor="{StaticResource GoldFoil}"
+                        HeightRequest="150"
+                        Style="{StaticResource CardView}"
+                        WidthRequest="150">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:PokemonViewModel}}, Path=NavigateToDetailsCommand}"
+                                CommandParameter="{Binding .}"
+                                NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="135"
+                            HorizontalOptions="Center"
+                            Source="{Binding Sprite.Image}"
+                            VerticalOptions="Center"
+                            WidthRequest="135" />
+                    </Frame>
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

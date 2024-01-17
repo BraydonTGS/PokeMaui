@@ -21,8 +21,4 @@
     <ProjectReference Include="..\PokeMaui.Business\PokeMaui.Business.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MapperTest\" />
-  </ItemGroup>
-
 </Project>

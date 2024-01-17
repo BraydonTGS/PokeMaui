@@ -15,15 +15,19 @@ namespace PokeMaui.Maui.ViewModel
     {
         private readonly PokemonApiService _apiService;
         private readonly INavigationService _navigationService;
+        private readonly IConnectivity _connectivity;
 
         public ObservableCollection<PokemonDto> Pokemons { get; set; }
 
-        public PokemonViewModel(PokemonApiService apiService, INavigationService navigationService)
+        public PokemonViewModel(PokemonApiService apiService, 
+            INavigationService navigationService,
+            IConnectivity connectivity)
         {
             _apiService = apiService;
             _navigationService = navigationService;
             Title = "PokemonViewModel";
             Pokemons = new();
+            _connectivity = connectivity;
         }
 
 
@@ -57,6 +61,9 @@ namespace PokeMaui.Maui.ViewModel
                 if (IsBusy) return;
                 IsBusy = true;
 
+                if(_connectivity.NetworkAccess != NetworkAccess.Internet)
+                    await Shell.Current.DisplayAlert("Error:", $"No Internet Connection Found", "OK");
+
                 if (Pokemons.Count != 0)
                     Pokemons.Clear();
 
@@ -68,7 +75,6 @@ namespace PokeMaui.Maui.ViewModel
             }
             catch (Exception ex)
             {
-                // Todo: Navigate to Error View with Message - Don't Crash //
                 Debug.WriteLine($"Error: {ex.Message}");
                 await Shell.Current.DisplayAlert("Error:", $"Unable to get the Specified Pokemon", "OK");
             }
