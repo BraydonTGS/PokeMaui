@@ -11,7 +11,7 @@ namespace PokeMaui.Business.Helpers
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static  string UppercaseFirstCharacter(string name)
+        public static string UppercaseFirstCharacter(string name)
         {
             var builder = new StringBuilder();
 

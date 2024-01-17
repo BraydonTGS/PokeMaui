@@ -30,7 +30,7 @@
                                 <TapGestureRecognizer
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:PokemonViewModel}}, Path=NavigateToDetailsCommand}"
                                     CommandParameter="{Binding .}"
-                                    NumberOfTapsRequired="2" />
+                                    NumberOfTapsRequired="1" />
                             </Frame.GestureRecognizers>
                             <Grid Padding="0" ColumnDefinitions="135, *">
                                 <Image
@@ -46,6 +46,7 @@
                                     FontAttributes="Bold"
                                     FontSize="25"
                                     HorizontalOptions="Start"
+                                    LineBreakMode="TailTruncation"
                                     Style="{StaticResource LargeLabel}"
                                     Text="{Binding Name}"
                                     VerticalOptions="Center" />
@@ -56,17 +57,21 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
+        <!--  Discover Button  -->
         <Button
             Grid.Row="1"
             Grid.Column="1"
             Margin="10"
             Command="{Binding GenerateRandomPokemonCommand}"
+            FontAttributes="Bold"
+            FontSize="20"
             HorizontalOptions="End"
             IsEnabled="{Binding IsNotBusy}"
             Style="{StaticResource ButtonOutline}"
             Text="Discover"
             VerticalOptions="Center" />
 
+        <!--  - Busy Indicator  -->
         <ActivityIndicator
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"

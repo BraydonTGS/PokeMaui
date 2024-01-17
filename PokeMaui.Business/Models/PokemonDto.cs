@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using PokeMaui.Business.Helpers;
+using System.Diagnostics;
 
 namespace PokeMaui.Business.Models
 {
@@ -17,10 +18,6 @@ namespace PokeMaui.Business.Models
 
         public int Height { get; set; }
 
-        public string FullTypeDisplay { get; set; }
-
-        public string FullAbilityDisplay { get; set; }
-
         public SpriteDto Sprite { get; set; }
 
         public IEnumerable<PokemonTypesDto> PokemonTypes { get; set; }
@@ -32,7 +29,6 @@ namespace PokeMaui.Business.Models
         public IEnumerable<PokemonMovesDto> PokemonMoves { get; set; }
 
         public PokemonDto() { }
-
         private string GetDebuggerDisplay()
         {
             return $"Name: {Name} - Id: {Id}";
