@@ -3,125 +3,135 @@
     x:Class="PokeMaui.Maui.View.PokemonDetailsView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:PokeMaui.Maui.Converters"
     Title="{Binding PokemonDto.Name}"
     Shell.PresentationMode="Animated">
 
-    <!--  Converters  -->
-    <ContentPage.Resources>
-        <ResourceDictionary />
-    </ContentPage.Resources>
-
     <Grid BackgroundColor="{StaticResource Isabelline}" RowDefinitions="*, auto">
         <VerticalStackLayout>
+            <!--  Header Grid  -->
             <Grid
                 Padding="10"
                 BackgroundColor="{StaticResource PrimaryYellow}"
                 ColumnDefinitions="*, Auto, *"
-                RowDefinitions="165, Auto">
+                RowDefinitions="350, Auto">
                 <BoxView
                     Grid.Row="0"
                     Grid.ColumnSpan="3"
                     BackgroundColor="{StaticResource PrimaryYellow}"
-                    HeightRequest="165"
+                    HeightRequest="350"
                     HorizontalOptions="FillAndExpand" />
-                <Label
-                    Grid.ColumnSpan="2"
-                    Style="{StaticResource LargeLabel}"
-                    Text="{Binding PokemonDto.Order, StringFormat='Order: {0}'}" />
+
+                <!--  Header Sub Details  -->
+                <StackLayout Grid.ColumnSpan="2" Spacing="15">
+                    <Label
+                        Grid.ColumnSpan="2"
+                        FontAttributes="Italic"
+                        Style="{StaticResource MediumLabel}"
+                        Text="{Binding PokemonDto.Order, StringFormat='Order: {0}'}" />
+                    <Label
+                        FontAttributes="Italic"
+                        Style="{StaticResource MediumLabel}"
+                        Text="{Binding PokemonDto.Weight, StringFormat='Weight: {0}'}" />
+
+                    <Label
+                        FontAttributes="Italic"
+                        Style="{StaticResource MediumLabel}"
+                        Text="{Binding PokemonDto.Height, StringFormat='Height: {0}'}" />
+
+                    <Label
+                        FontAttributes="Italic"
+                        Style="{StaticResource MediumLabel}"
+                        Text="{Binding PokemonDto.BaseExperience, StringFormat='Base Experience: {0}'}" />
+                </StackLayout>
+
 
                 <!--  Pokemon Sprite  -->
                 <Frame
                     Grid.RowSpan="1"
                     Grid.Column="1"
-                    Margin="0,165,0,0"
+                    Margin="0,350,0,0"
                     Padding="0"
                     BorderColor="{StaticResource Accent}"
-                    CornerRadius="85"
-                    HeightRequest="165"
+                    CornerRadius="150"
+                    HeightRequest="300"
                     HorizontalOptions="Center"
                     IsClippedToBounds="True"
                     Style="{StaticResource CardView}"
-                    WidthRequest="165">
+                    WidthRequest="300">
                     <!--  Image  -->
                     <Image
                         Aspect="AspectFill"
-                        HeightRequest="160"
+                        HeightRequest="300"
                         HorizontalOptions="Center"
                         Source="{Binding PokemonDto.Sprite.Image}"
                         VerticalOptions="Center"
-                        WidthRequest="160" />
+                        WidthRequest="300" />
                 </Frame>
             </Grid>
 
-            <!--  Sub Details  -->
-            <VerticalStackLayout
-                Margin="0,80,0,0"
+            <!--  Sub Details Grid  -->
+            <Grid
+                Margin="0,145,0,0"
                 Padding="10"
                 Background="{StaticResource Isabelline}"
-                Spacing="20">
+                ColumnDefinitions="*, *"
+                HorizontalOptions="Center"
+                RowDefinitions="*, *"
+                VerticalOptions="Center">
 
-                <Label Style="{StaticResource MediumLabel}" Text="{Binding PokemonDto.Weight, StringFormat='Weight: {0}'}" />
+                <!--  Types  -->
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MediumLabel}"
+                    Text="- Type -"
+                    VerticalOptions="Center" />
+                <CollectionView
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    ItemsSource="{Binding PokemonDto.PokemonTypes}"
+                    SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label
+                                Margin="0,5,0,0"
+                                FontAttributes="Italic"
+                                HorizontalOptions="Center"
+                                LineBreakMode="TailTruncation"
+                                Style="{StaticResource MediumLabel}"
+                                Text="{Binding Type.Name, StringFormat='{0}'}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-                <Label Style="{StaticResource MediumLabel}" Text="{Binding PokemonDto.Height, StringFormat='Height: {0}'}" />
+                <!--  Abilities  -->
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MediumLabel}"
+                    Text="- Abilities -"
+                    VerticalOptions="Center" />
+                <CollectionView
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    ItemsSource="{Binding PokemonDto.PokemonAbility}"
+                    SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label
+                                Margin="0,5,0,0"
+                                FontAttributes="Italic"
+                                HorizontalOptions="Center"
+                                LineBreakMode="TailTruncation"
+                                Style="{StaticResource MediumLabel}"
+                                Text="{Binding Ability.Name, StringFormat='{0}'}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-                <Label Style="{StaticResource MediumLabel}" Text="{Binding PokemonDto.BaseExperience, StringFormat='Base Experience: {0}'}" />
-
-                <Line BackgroundColor="{StaticResource Accent}" />
-                <!--  Collection Details  -->
-                <Grid
-                    ColumnDefinitions="*, *"
-                    HorizontalOptions="StartAndExpand"
-                    RowDefinitions="*, *"
-                    RowSpacing="5"
-                    VerticalOptions="Center">
-
-                    <!--  Pokemon Abilities  -->
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Style="{StaticResource MediumLabel}"
-                        Text="Abilities" />
-                    <CollectionView
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        ItemsSource="{Binding PokemonDto.PokemonAbility}"
-                        SelectionMode="None">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Label
-                                    Margin="0,5,0,0"
-                                    LineBreakMode="TailTruncation"
-                                    Style="{StaticResource MediumLabel}"
-                                    Text="{Binding Ability.Name, StringFormat='* {0}'}" />
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-
-                    <!--  Pokemon Type  -->
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Style="{StaticResource MediumLabel}"
-                        Text="Type" />
-                    <CollectionView
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        HorizontalOptions="Start"
-                        ItemsSource="{Binding PokemonDto.PokemonTypes}"
-                        SelectionMode="None">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Label
-                                    Margin="0,5,0,0"
-                                    LineBreakMode="TailTruncation"
-                                    Style="{StaticResource MediumLabel}"
-                                    Text="{Binding Type.Name, StringFormat='* {0}'}" />
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </Grid>
-            </VerticalStackLayout>
+            </Grid>
         </VerticalStackLayout>
 
         <!--  Catch Button  -->

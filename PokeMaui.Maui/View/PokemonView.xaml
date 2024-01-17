@@ -20,30 +20,33 @@
             Grid.ColumnSpan="2"
             ItemsSource="{Binding Pokemons}"
             SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-
-                    <Frame
-                        Padding="0"
-                        BorderColor="{StaticResource GoldFoil}"
-                        HeightRequest="150"
-                        Style="{StaticResource CardView}"
-                        WidthRequest="150">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:PokemonViewModel}}, Path=NavigateToDetailsCommand}"
-                                CommandParameter="{Binding .}"
-                                NumberOfTapsRequired="1" />
-                        </Frame.GestureRecognizers>
-                        <Image
-                            Aspect="AspectFill"
-                            HeightRequest="135"
-                            HorizontalOptions="Center"
-                            Source="{Binding Sprite.Image}"
-                            VerticalOptions="Center"
-                            WidthRequest="135" />
-                    </Frame>
-
+                    <Grid Margin="5" RowSpacing="5">
+                        <Frame
+                            Padding="0"
+                            BorderColor="{StaticResource GoldFoil}"
+                            HeightRequest="150"
+                            Style="{StaticResource CardView}"
+                            WidthRequest="150">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:PokemonViewModel}}, Path=NavigateToDetailsCommand}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="135"
+                                HorizontalOptions="Center"
+                                Source="{Binding Sprite.Image}"
+                                VerticalOptions="Center"
+                                WidthRequest="135" />
+                        </Frame>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

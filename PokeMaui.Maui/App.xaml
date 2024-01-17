@@ -45,7 +45,7 @@
                 x:Key="SmallLabel"
                 BasedOn="{StaticResource BaseLabel}"
                 TargetType="Label">
-                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontSize" Value="20" />
             </Style>
 
             <Style
@@ -53,7 +53,7 @@
                 BasedOn="{StaticResource BaseLabel}"
                 TargetType="Label">
                 <Setter Property="FontSize" Value="25" />
-                <Setter Property="FontAttributes" Value="Bold" />
+
             </Style>
 
             <Style
