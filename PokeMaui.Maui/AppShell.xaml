@@ -4,7 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PokeMaui.Maui"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.BackgroundColor="{StaticResource Isabelline}"
+    Shell.FlyoutBackdrop="{StaticResource Isabelline}"
+    Shell.FlyoutBehavior="Flyout">
 
     <!--  Shell Resources  -->
     <Shell.Resources>
@@ -27,10 +29,40 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <ShellContent
-        Title="PokeMaui"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage"
-        Shell.NavBarIsVisible="True" />
+    <!--  Flyout menu items  -->
+    <FlyoutItem Title="Home">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Discover">
+        <ShellContent
+            Title="Discover"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Favorites">
+        <ShellContent
+            Title="Favorites"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Account">
+        <ShellContent
+            Title="Account"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Login/Logout">
+        <ShellContent
+            Title="Login/Logout"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
 
 </Shell>

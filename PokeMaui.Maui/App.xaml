@@ -8,14 +8,15 @@
     <!--  Shared Application Resources  -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#FF0000</Color>
+            <Color x:Key="Primary">#DD3042</Color>
             <Color x:Key="PrimaryDark">#CC0000</Color>
-            <Color x:Key="Accent">#3B4CCA</Color>
+            <Color x:Key="Accent">#23A4C9</Color>
             <Color x:Key="PrimaryYellow">#FFDE00</Color>
             <Color x:Key="GoldFoil">#B3A125</Color>
             <Color x:Key="Isabelline">#F5F7EA</Color>
             <Color x:Key="Rackley">#4E91A4</Color>
 
+            <!--  Light and Dark Mode  -->
             <Color x:Key="LightBackground">#FAF9F8</Color>
             <Color x:Key="DarkBackground">Black</Color>
 
@@ -29,11 +30,13 @@
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
 
+            <!--  Base Label  -->
             <Style x:Key="BaseLabel" TargetType="Label">
                 <Setter Property="FontFamily" Value="OpenSansRegular" />
                 <Setter Property="TextColor" Value="#1F1F1F" />
             </Style>
 
+            <!--  Micro Label  -->
             <Style
                 x:Key="MicroLabel"
                 BasedOn="{StaticResource BaseLabel}"
@@ -41,6 +44,7 @@
                 <Setter Property="FontSize" Value="10" />
             </Style>
 
+            <!--  Small Label  -->
             <Style
                 x:Key="SmallLabel"
                 BasedOn="{StaticResource BaseLabel}"
@@ -48,6 +52,7 @@
                 <Setter Property="FontSize" Value="20" />
             </Style>
 
+            <!--  Medium Label  -->
             <Style
                 x:Key="MediumLabel"
                 BasedOn="{StaticResource BaseLabel}"
@@ -56,6 +61,7 @@
 
             </Style>
 
+            <!--  Large Label  -->
             <Style
                 x:Key="LargeLabel"
                 BasedOn="{StaticResource BaseLabel}"
@@ -64,10 +70,12 @@
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
 
+            <!--  Refresh  -->
             <Style ApplyToDerivedTypes="True" TargetType="RefreshView">
                 <Setter Property="RefreshColor" Value="{StaticResource Primary}" />
             </Style>
 
+            <!--  Button  -->
             <Style x:Key="ButtonOutline" TargetType="Button">
                 <Setter Property="Background" Value="{StaticResource Primary}" />
                 <Setter Property="TextColor" Value="White" />

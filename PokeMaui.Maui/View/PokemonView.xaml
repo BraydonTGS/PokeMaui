@@ -20,9 +20,27 @@
             Grid.ColumnSpan="2"
             ItemsSource="{Binding Pokemons}"
             SelectionMode="None">
+            <!--  Empty View  -->
+            <CollectionView.EmptyView>
+                <StackLayout
+                    HeightRequest="375"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="375">
+                    <Image
+                        Aspect="AspectFill"
+                        HorizontalOptions="CenterAndExpand"
+                        Source="pokedex.png"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </CollectionView.EmptyView>
+
+            <!--  Item Layout 2 x 2  -->
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
+
+            <!--  Frame with Sprite  -->
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="5" RowSpacing="5">
