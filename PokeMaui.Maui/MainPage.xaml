@@ -7,11 +7,17 @@
     xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
     xmlns:model="clr-namespace:PokeMaui.Business.Models;assembly=PokeMaui.Business"
     xmlns:viewmodel="clr-namespace:PokeMaui.Maui.ViewModel"
-    x:DataType="viewmodel:MainViewModel">
+    x:DataType="viewmodel:MainViewModel"
+    Background="{StaticResource Isabelline}">
 
     <ContentPage.Behaviors>
         <mct:StatusBarBehavior StatusBarColor="DarkGray" StatusBarStyle="Default" />
     </ContentPage.Behaviors>
-    <local:PokemonView BindingContext="{Binding PokemonViewModel}" />
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="Home"
+            VerticalOptions="Center" />
+    </VerticalStackLayout>
 
 </ContentPage>

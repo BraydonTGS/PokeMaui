@@ -2,10 +2,11 @@ using PokeMaui.Maui.ViewModel;
 
 namespace PokeMaui.Maui.View;
 
-public partial class PokemonView : ContentView
+public partial class PokemonView : ContentPage
 {
-	public PokemonView()
+	public PokemonView(PokemonViewModel pokemonViewModel)
 	{
 		InitializeComponent();
+		BindingContext = pokemonViewModel;
 	}
 }

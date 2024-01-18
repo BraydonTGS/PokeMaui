@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView
+<ContentPage
     x:Class="PokeMaui.Maui.View.PokemonView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:viewModel="clr-namespace:PokeMaui.Maui.ViewModel"
     ios:Page.UseSafeArea="True"
-    BindingContext="{Binding}">
+    Background="{StaticResource Isabelline}">
 
     <Grid
         BackgroundColor="{StaticResource Isabelline}"
@@ -93,4 +93,4 @@
             VerticalOptions="CenterAndExpand"
             Color="{StaticResource Accent}" />
     </Grid>
-</ContentView>
+</ContentPage>

@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PokeMaui.Maui"
+    xmlns:views="clr-namespace:PokeMaui.Maui.View"
     Shell.BackgroundColor="{StaticResource Isabelline}"
     Shell.FlyoutBackdrop="{StaticResource Isabelline}"
     Shell.FlyoutBehavior="Flyout">
@@ -29,7 +30,7 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!--  Flyout menu items  -->
+    <!--  Flyout Menu Items  -->
     <FlyoutItem Title="Home">
         <ShellContent
             Title="Home"
@@ -40,8 +41,8 @@
     <FlyoutItem Title="Discover">
         <ShellContent
             Title="Discover"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate views:PokemonView}"
+            Route="PokemonView" />
     </FlyoutItem>
 
     <FlyoutItem Title="Favorites">
@@ -54,14 +55,14 @@
     <FlyoutItem Title="Account">
         <ShellContent
             Title="Account"
-            ContentTemplate="{DataTemplate local:MainPage}"
+            ContentTemplate="{DataTemplate views:AccountPage}"
             Route="MainPage" />
     </FlyoutItem>
 
     <FlyoutItem Title="Login/Logout">
         <ShellContent
             Title="Login/Logout"
-            ContentTemplate="{DataTemplate local:MainPage}"
+            ContentTemplate="{DataTemplate views:LoginPage}"
             Route="MainPage" />
     </FlyoutItem>
 
