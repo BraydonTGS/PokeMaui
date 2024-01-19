@@ -7,7 +7,8 @@
     Background="{StaticResource Isabelline}"
     Shell.PresentationMode="Animated">
 
-    <Grid BackgroundColor="{StaticResource Isabelline}" RowDefinitions="*, auto">
+    <Grid RowDefinitions="*, auto">
+        
         <VerticalStackLayout>
             <!--  Header Grid  -->
             <Grid
@@ -144,6 +145,7 @@
             HorizontalOptions="End"
             IsEnabled="{Binding IsNotBusy}"
             Style="{StaticResource ButtonOutline}"
+            Command="{Binding CatchPokemonCommand}"
             Text="Catch"
             VerticalOptions="Center" />
 

@@ -9,11 +9,9 @@
     Background="{StaticResource Isabelline}">
 
     <Grid
-        BackgroundColor="{StaticResource Isabelline}"
         ColumnDefinitions="*, *"
         ColumnSpacing="5"
         RowDefinitions="*,Auto">
-
         <!--  Pokemon List  -->
         <CollectionView
             Grid.Row="0"
@@ -30,7 +28,7 @@
                     <Image
                         Aspect="AspectFill"
                         HorizontalOptions="CenterAndExpand"
-                        Source="pokedex.png"
+                        Source="pikachu.png"
                         VerticalOptions="CenterAndExpand" />
                 </StackLayout>
             </CollectionView.EmptyView>
@@ -75,7 +73,6 @@
             Grid.Column="1"
             Margin="10"
             Command="{Binding GenerateRandomPokemonCommand}"
-            FontAttributes="Bold"
             FontSize="20"
             HorizontalOptions="End"
             IsEnabled="{Binding IsNotBusy}"

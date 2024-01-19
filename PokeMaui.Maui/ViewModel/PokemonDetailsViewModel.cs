@@ -1,6 +1,9 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using PokeMaui.Business.Models;
 using PokeMaui.Global.Constants;
+using System.Runtime.CompilerServices;
 
 namespace PokeMaui.Maui.ViewModel
 {
@@ -13,5 +16,24 @@ namespace PokeMaui.Maui.ViewModel
         {
            
         }
+
+        #region CatchPokemonAsync
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [RelayCommand]
+        private async Task CatchPokemonAsync()
+        {
+            try
+            {
+                await Shell.Current.DisplayAlert("Hello!", "This is not implemented yet!!!", "OK");
+            }
+            catch (Exception)
+            {
+              throw;
+            }
+        }
+        #endregion
     }
 }

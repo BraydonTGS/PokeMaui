@@ -79,11 +79,13 @@
             <Style x:Key="ButtonOutline" TargetType="Button">
                 <Setter Property="Background" Value="{StaticResource Primary}" />
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="BorderColor" Value="{StaticResource Primary}" />
-                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="{StaticResource Accent}" />
+
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="CornerRadius" Value="25" />
             </Style>
+
+            <!--  Card View  -->
             <Style x:Key="CardView" TargetType="Frame">
                 <Setter Property="BorderColor" Value="#DDDDDD" />
                 <Setter Property="HasShadow" Value="{OnPlatform iOS=false, MacCatalyst=false, Default=true}" />

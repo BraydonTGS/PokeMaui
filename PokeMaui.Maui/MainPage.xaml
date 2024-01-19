@@ -13,11 +13,15 @@
     <ContentPage.Behaviors>
         <mct:StatusBarBehavior StatusBarColor="DarkGray" StatusBarStyle="Default" />
     </ContentPage.Behaviors>
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Home"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
-
+    <StackLayout
+        HeightRequest="375"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="375">
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="CenterAndExpand"
+            Source="pokedex.png"
+            VerticalOptions="CenterAndExpand" />
+    </StackLayout>
 </ContentPage>
