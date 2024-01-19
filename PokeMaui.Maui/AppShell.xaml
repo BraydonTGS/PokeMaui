@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PokeMaui.Maui"
     xmlns:views="clr-namespace:PokeMaui.Maui.View"
-    Shell.BackgroundColor="{StaticResource Isabelline}"
     Shell.FlyoutBackdrop="{StaticResource Isabelline}"
     Shell.FlyoutBehavior="Flyout">
 
@@ -35,35 +34,35 @@
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            Route="Main" />
     </FlyoutItem>
 
     <FlyoutItem Title="Discover">
         <ShellContent
             Title="Discover"
-            ContentTemplate="{DataTemplate views:PokemonView}"
-            Route="PokemonView" />
+            ContentTemplate="{DataTemplate views:PokemonDiscoverPage}"
+            Route="DiscoverPage" />
     </FlyoutItem>
 
     <FlyoutItem Title="Favorites">
         <ShellContent
             Title="Favorites"
             ContentTemplate="{DataTemplate views:FavoritesPage}"
-            Route="MainPage" />
+            Route="Favorites" />
     </FlyoutItem>
 
     <FlyoutItem Title="Account">
         <ShellContent
             Title="Account"
             ContentTemplate="{DataTemplate views:AccountPage}"
-            Route="MainPage" />
+            Route="Account" />
     </FlyoutItem>
 
     <FlyoutItem Title="Login/Logout">
         <ShellContent
             Title="Login/Logout"
             ContentTemplate="{DataTemplate views:LoginPage}"
-            Route="MainPage" />
+            Route="Login" />
     </FlyoutItem>
 
 </Shell>

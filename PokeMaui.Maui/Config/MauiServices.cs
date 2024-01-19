@@ -14,12 +14,12 @@ namespace PokeMaui.Maui.Config
         public static IServiceCollection ConfigureMauiServices(IServiceCollection services)
         {
             // ViewModels //
-            services.AddSingleton<PokemonViewModel>();
+            services.AddSingleton<PokemonDiscoverViewModel>();
             services.AddTransient<PokemonDetailsViewModel>();
             services.AddSingleton<MainViewModel>();
 
             // Views & Pages //
-            services.AddSingleton<PokemonView>();
+            services.AddSingleton<PokemonDiscoverPage>();
             services.AddTransient<PokemonDetailsView>();
             services.AddSingleton<MainPage>();
 

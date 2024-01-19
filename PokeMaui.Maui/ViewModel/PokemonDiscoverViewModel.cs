@@ -1,5 +1,4 @@
-﻿
-using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.Input;
 using PokeMaui.Business.Api;
 using PokeMaui.Business.Models;
 using PokeMaui.Global.Constants;
@@ -11,7 +10,7 @@ using System.Diagnostics;
 
 namespace PokeMaui.Maui.ViewModel
 {
-    public partial class PokemonViewModel : BaseViewModel
+    public partial class PokemonDiscoverViewModel : BaseViewModel
     {
         private readonly PokemonApiService _apiService;
         private readonly INavigationService _navigationService;
@@ -19,17 +18,17 @@ namespace PokeMaui.Maui.ViewModel
 
         public ObservableCollection<PokemonDto> Pokemons { get; set; }
 
-        public PokemonViewModel(PokemonApiService apiService, 
+        public PokemonDiscoverViewModel(PokemonApiService apiService,
             INavigationService navigationService,
             IConnectivity connectivity)
         {
             _apiService = apiService;
             _navigationService = navigationService;
             Title = "PokemonViewModel";
-            Pokemons = new();
+            
+           Pokemons = new();
             _connectivity = connectivity;
         }
-
 
         #region NavigateToDetailsAsync
         /// <summary>
@@ -61,7 +60,7 @@ namespace PokeMaui.Maui.ViewModel
                 if (IsBusy) return;
                 IsBusy = true;
 
-                if(_connectivity.NetworkAccess != NetworkAccess.Internet)
+                if (_connectivity.NetworkAccess != NetworkAccess.Internet)
                     await Shell.Current.DisplayAlert("Error:", $"No Internet Connection Found", "OK");
 
                 if (Pokemons.Count != 0)

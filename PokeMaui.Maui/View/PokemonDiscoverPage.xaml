@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="PokeMaui.Maui.View.PokemonView"
+    x:Class="PokeMaui.Maui.View.PokemonDiscoverPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-    xmlns:viewModel="clr-namespace:PokeMaui.Maui.ViewModel"
-    ios:Page.UseSafeArea="True"
+    xmlns:model="clr-namespace:PokeMaui.Business.Models;assembly=PokeMaui.Business"
+    xmlns:viewmodel="clr-namespace:PokeMaui.Maui.ViewModel"
+    Title="Discover"
+    x:DataType="viewmodel:PokemonDiscoverViewModel"
     Background="{StaticResource Isabelline}">
-
     <Grid
         ColumnDefinitions="*, *"
         ColumnSpacing="5"
         RowDefinitions="*,Auto">
         <!--  Pokemon List  -->
         <CollectionView
+            x:Name="CollectionView"
             Grid.Row="0"
             Grid.ColumnSpan="2"
             HorizontalOptions="Center"
@@ -38,7 +39,7 @@
 
             <!--  Frame with Sprite  -->
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="model:PokemonDto">
                     <Grid Margin="5">
                         <Frame
                             Padding="0"
@@ -48,7 +49,7 @@
                             WidthRequest="300">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:PokemonViewModel}}, Path=NavigateToDetailsCommand}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PokemonDiscoverViewModel}}, Path=NavigateToDetailsCommand}"
                                     CommandParameter="{Binding .}"
                                     NumberOfTapsRequired="1" />
                             </Frame.GestureRecognizers>

@@ -9,8 +9,7 @@ namespace PokeMaui.Maui
             InitializeComponent();
 
             // Register Routing //
-            Routing.RegisterRoute(nameof(PokemonView), typeof(PokemonView));
-            Routing.RegisterRoute(nameof(PokemonDetailsView), typeof(PokemonDetailsView));           
+            Routing.RegisterRoute(nameof(PokemonDetailsView), typeof(PokemonDetailsView));
         }
     }
 }
