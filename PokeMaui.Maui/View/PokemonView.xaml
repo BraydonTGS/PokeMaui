@@ -16,8 +16,11 @@
         <CollectionView
             Grid.Row="0"
             Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
             ItemsSource="{Binding Pokemons}"
-            SelectionMode="None">
+            SelectionMode="None"
+            VerticalOptions="Center">
+
             <!--  Empty View  -->
             <CollectionView.EmptyView>
                 <StackLayout
@@ -33,34 +36,38 @@
                 </StackLayout>
             </CollectionView.EmptyView>
 
-            <!--  Item Layout 2 x 2  -->
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical" Span="2" />
-            </CollectionView.ItemsLayout>
-
             <!--  Frame with Sprite  -->
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="5" RowSpacing="5">
+                    <Grid Margin="5">
                         <Frame
                             Padding="0"
                             BorderColor="{StaticResource GoldFoil}"
-                            HeightRequest="150"
+                            HeightRequest="300"
                             Style="{StaticResource CardView}"
-                            WidthRequest="150">
+                            WidthRequest="300">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:PokemonViewModel}}, Path=NavigateToDetailsCommand}"
                                     CommandParameter="{Binding .}"
                                     NumberOfTapsRequired="1" />
                             </Frame.GestureRecognizers>
-                            <Image
-                                Aspect="AspectFill"
-                                HeightRequest="135"
-                                HorizontalOptions="Center"
-                                Source="{Binding Sprite.Image}"
-                                VerticalOptions="Center"
-                                WidthRequest="135" />
+                            <Grid RowDefinitions="*, auto">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="275"
+                                    HorizontalOptions="Center"
+                                    Source="{Binding Sprite.Image}"
+                                    VerticalOptions="Start"
+                                    WidthRequest="275" />
+                                <Label
+                                    Grid.Row="1"
+                                    Margin="0,0,0,10"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource LargeLabel}"
+                                    Text="{Binding Name}"
+                                    VerticalOptions="CenterAndExpand" />
+                            </Grid>
                         </Frame>
                     </Grid>
                 </DataTemplate>

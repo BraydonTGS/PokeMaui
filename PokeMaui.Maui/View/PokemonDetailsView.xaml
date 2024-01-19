@@ -8,7 +8,7 @@
     Shell.PresentationMode="Animated">
 
     <Grid RowDefinitions="*, auto">
-        
+
         <VerticalStackLayout>
             <!--  Header Grid  -->
             <Grid
@@ -63,6 +63,7 @@
                     <!--  Image  -->
                     <Image
                         Aspect="AspectFill"
+                        BackgroundColor="LightGray"
                         HeightRequest="300"
                         HorizontalOptions="Center"
                         Source="{Binding PokemonDto.Sprite.Image}"
@@ -140,12 +141,12 @@
         <Button
             Grid.Row="1"
             Margin="10"
+            Command="{Binding CatchPokemonCommand}"
             FontAttributes="Bold"
             FontSize="20"
             HorizontalOptions="End"
             IsEnabled="{Binding IsNotBusy}"
             Style="{StaticResource ButtonOutline}"
-            Command="{Binding CatchPokemonCommand}"
             Text="Catch"
             VerticalOptions="Center" />
 
