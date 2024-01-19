@@ -47,8 +47,11 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\pokemon_logo.png" />
+	  <None Remove="Resources\Images\bulbasaur.png" />
+	  <None Remove="Resources\Images\charmander.png" />
 	  <None Remove="Resources\Images\pikachu.png" />
 	  <None Remove="Resources\Images\Pokedex.png" />
+	  <None Remove="Resources\Images\squirtle.png" />
 	</ItemGroup>
 
 	<ItemGroup>

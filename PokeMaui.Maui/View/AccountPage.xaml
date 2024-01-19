@@ -5,10 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="AccountPage"
     Background="{StaticResource Isabelline}">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Account"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+
+    <StackLayout
+        HeightRequest="375"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="375">
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="CenterAndExpand"
+            Source="squirtle.png"
+            VerticalOptions="CenterAndExpand" />
+    </StackLayout>
 </ContentPage>

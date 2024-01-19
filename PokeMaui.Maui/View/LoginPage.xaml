@@ -5,10 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="LoginPage"
     Background="{StaticResource Isabelline}">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Login"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout
+        HeightRequest="375"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="375">
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="CenterAndExpand"
+            Source="charmander.png"
+            VerticalOptions="CenterAndExpand" />
+    </StackLayout>
 </ContentPage>
