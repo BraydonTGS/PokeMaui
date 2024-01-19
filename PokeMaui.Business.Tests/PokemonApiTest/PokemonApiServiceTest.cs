@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualStudio.TestPlatform.CrossPlatEngine.Helpers;
 using PokeMaui.Business.Api;
 using PokeMaui.Business.Models;
 using PokeMaui.Business.Tests.Base;
@@ -78,7 +79,31 @@ namespace PokeMaui.Business.Tests.PokemonApiTest
             Assert.AreEqual(pokemon.Name, expectedName);
             Assert.IsNotNull(pokemon.Sprite);
         }
+        #endregion
 
+        #region PokemonApiService_GetByPokemonName_Pikachu_Success
+        [TestMethod]
+        public async Task PokemonApiService_GetByPokemonName_Pikachu_Success()
+        {
+            var dto = await _pokemonApiService.GetByNameAsync(Constants.Pikachu);
+
+            Assert.IsNotNull(dto);
+            Assert.IsInstanceOfType(dto, typeof(PokemonDto));
+
+            Assert.AreEqual(Constants.Pikachu, dto.Name);
+
+            Assert.IsNotNull(dto.Sprite);
+            Assert.AreEqual("DefaultSprite", dto.Sprite.Name);
+            Assert.AreEqual("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png", dto.Sprite.Image);
+
+            Assert.IsNotNull(dto.PokemonTypes);
+            Assert.AreEqual(1, dto.PokemonTypes.Count());
+
+            Assert.IsNotNull(dto.PokemonTypes.First());
+            Assert.IsNotNull(dto.PokemonTypes.First().Type);
+            Assert.AreEqual("Electric", dto.PokemonTypes.First().Type.Name);
+          
+        }
         #endregion
 
         #region PokemonApiService_NameNotFound_ThrowsApiException_404_Success
